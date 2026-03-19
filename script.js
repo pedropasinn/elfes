@@ -6,48 +6,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Navbar scroll effect ---
   const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 20);
-  });
+  if (navbar) {
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  }
 
   // --- Mobile menu toggle ---
   const menuToggle = document.getElementById('menuToggle');
   const navLinks = document.getElementById('navLinks');
 
-  menuToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-    const isOpen = navLinks.classList.contains('open');
-    menuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
-    const spans = menuToggle.querySelectorAll('span');
-    if (isOpen) {
-      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-      spans[1].style.opacity = '0';
-      spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-    } else {
-      spans[0].style.transform = '';
-      spans[1].style.opacity = '';
-      spans[2].style.transform = '';
-    }
-  });
-
-  // Close mobile menu on link click
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      const isOpen = navLinks.classList.contains('open');
+      menuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
       const spans = menuToggle.querySelectorAll('span');
-      spans[0].style.transform = '';
-      spans[1].style.opacity = '';
-      spans[2].style.transform = '';
+      if (isOpen) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        spans[0].style.transform = '';
+        spans[1].style.opacity = '';
+        spans[2].style.transform = '';
+      }
     });
-  });
 
-  // --- Module accordion ---
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        const spans = menuToggle.querySelectorAll('span');
+        spans[0].style.transform = '';
+        spans[1].style.opacity = '';
+        spans[2].style.transform = '';
+      });
+    });
+  }
+
+  // --- Module accordion (curso.html) ---
   document.querySelectorAll('.module-header').forEach(header => {
     header.addEventListener('click', () => {
       const isExpanded = header.getAttribute('aria-expanded') === 'true';
       const content = header.nextElementSibling;
 
-      // Close all other modules
       document.querySelectorAll('.module-header').forEach(otherHeader => {
         if (otherHeader !== header) {
           otherHeader.setAttribute('aria-expanded', 'false');
@@ -55,13 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
 
-      // Toggle current
       header.setAttribute('aria-expanded', !isExpanded);
       content.classList.toggle('open', !isExpanded);
     });
   });
 
-  // --- Peek Modal (Notion-style side panel) ---
+  // --- Peek Modal (universal) ---
   const peekOverlay = document.getElementById('peekOverlay');
   const peekModal = document.getElementById('peekModal');
   const peekClose = document.getElementById('peekClose');
@@ -73,7 +74,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const peekYoutubeLink = document.getElementById('peekYoutubeLink');
   const peekPdfLink = document.getElementById('peekPdfLink');
 
-  // Convert youtu.be URL to embed URL
   function toYouTubeEmbed(url) {
     if (!url) return '';
     let videoId = '';
@@ -86,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return videoId ? `https://www.youtube.com/embed/${videoId}?rel=0` : '';
   }
 
-  // Convert Google Drive view URL to preview/embed URL
   function toDrivePreview(url) {
     if (!url || url === '#') return '';
     const match = url.match(/\/file\/d\/([^/]+)/);
@@ -96,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
     return url;
   }
 
-  // Get module name from a lesson card
   function getModuleName(card) {
     const moduleEl = card.closest('.module');
     if (moduleEl) {
@@ -107,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return '';
   }
 
-  function openPeek(card) {
+  function openPeekFromLesson(card) {
     const title = card.querySelector('.lesson-title').textContent;
     const desc = card.querySelector('.lesson-desc').textContent;
     const moduleName = getModuleName(card);
@@ -118,65 +116,106 @@ document.addEventListener('DOMContentLoaded', () => {
     const youtubeUrl = videoLink ? videoLink.getAttribute('href') : '';
     const pdfUrl = pdfLink ? pdfLink.getAttribute('href') : '';
 
-    // Populate modal
-    peekTitle.textContent = `Aula ${lessonNum} — ${title}`;
-    peekDesc.textContent = desc;
-    peekModuleBadge.textContent = moduleName;
+    if (peekTitle) peekTitle.textContent = `Aula ${lessonNum} — ${title}`;
+    if (peekDesc) peekDesc.textContent = desc;
+    if (peekModuleBadge) peekModuleBadge.textContent = moduleName;
 
-    // Set YouTube embed
-    peekVideo.src = toYouTubeEmbed(youtubeUrl);
-    peekYoutubeLink.href = youtubeUrl;
+    if (peekVideo) peekVideo.src = toYouTubeEmbed(youtubeUrl);
+    if (peekYoutubeLink) peekYoutubeLink.href = youtubeUrl;
 
-    // Set PDF embed
-    const drivePreview = toDrivePreview(pdfUrl);
-    peekPdf.src = drivePreview;
-    peekPdfLink.href = pdfUrl;
-
-    // Show/hide PDF section
-    const pdfSection = peekPdf.closest('.peek-section');
-    if (drivePreview) {
-      pdfSection.style.display = '';
-    } else {
-      pdfSection.style.display = 'none';
+    if (peekPdf) {
+      const drivePreview = toDrivePreview(pdfUrl);
+      peekPdf.src = drivePreview;
+      if (peekPdfLink) peekPdfLink.href = pdfUrl;
+      const pdfSection = peekPdf.closest('.peek-section');
+      if (pdfSection) pdfSection.style.display = drivePreview ? '' : 'none';
     }
 
-    // Open
-    peekOverlay.classList.add('open');
-    peekModal.classList.add('open');
+    openPeekModal();
+  }
+
+  function openPeekFromVideoCard(card) {
+    const videoId = card.dataset.video;
+    const title = card.querySelector('.video-card-title, .video-library-title');
+    const module = card.querySelector('.video-card-module, .video-thumb-badge');
+
+    if (peekTitle) peekTitle.textContent = title ? title.textContent : '';
+    if (peekModuleBadge) peekModuleBadge.textContent = module ? module.textContent : '';
+    if (peekDesc) peekDesc.textContent = '';
+
+    if (peekVideo) peekVideo.src = `https://www.youtube.com/embed/${videoId}?rel=0&autoplay=1`;
+    if (peekYoutubeLink) peekYoutubeLink.href = `https://youtu.be/${videoId}`;
+
+    // Hide PDF section if it exists
+    if (peekPdf) {
+      peekPdf.src = '';
+      const pdfSection = peekPdf.closest('.peek-section');
+      if (pdfSection) pdfSection.style.display = 'none';
+    }
+
+    openPeekModal();
+  }
+
+  function openPeekModal() {
+    if (peekOverlay) peekOverlay.classList.add('open');
+    if (peekModal) peekModal.classList.add('open');
     document.body.classList.add('peek-open');
   }
 
   function closePeek() {
-    peekOverlay.classList.remove('open');
-    peekModal.classList.remove('open');
+    if (peekOverlay) peekOverlay.classList.remove('open');
+    if (peekModal) peekModal.classList.remove('open');
     document.body.classList.remove('peek-open');
 
-    // Stop video playback
     setTimeout(() => {
-      peekVideo.src = '';
-      peekPdf.src = '';
+      if (peekVideo) peekVideo.src = '';
+      if (peekPdf) peekPdf.src = '';
     }, 400);
   }
 
-  // Attach click handlers to all lesson cards
+  // Lesson cards (curso.html)
   document.querySelectorAll('.lesson-card').forEach(card => {
     card.addEventListener('click', (e) => {
-      // Don't open peek if clicking directly on a link (allow right-click, ctrl+click)
       if (e.target.closest('a') && (e.ctrlKey || e.metaKey)) return;
       e.preventDefault();
-      openPeek(card);
+      openPeekFromLesson(card);
     });
   });
 
-  // Close handlers
-  peekClose.addEventListener('click', closePeek);
-  peekOverlay.addEventListener('click', closePeek);
+  // Video cards (index.html & videos.html)
+  document.querySelectorAll('.video-card, .video-library-card').forEach(card => {
+    if (card.dataset.video) {
+      card.addEventListener('click', () => {
+        openPeekFromVideoCard(card);
+      });
+    }
+  });
 
-  // Close on Escape key
+  // Close handlers
+  if (peekClose) peekClose.addEventListener('click', closePeek);
+  if (peekOverlay) peekOverlay.addEventListener('click', closePeek);
+
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && peekModal.classList.contains('open')) {
+    if (e.key === 'Escape' && peekModal && peekModal.classList.contains('open')) {
       closePeek();
     }
+  });
+
+  // --- Video filters (videos.html) ---
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.video-library-card').forEach(card => {
+        if (filter === 'all' || card.dataset.module === filter) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
   });
 
   // --- Scroll animations ---
@@ -194,7 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, observerOptions);
 
-  document.querySelectorAll('.module, .community-card, .about-content, .about-image-wrapper').forEach(el => {
+  document.querySelectorAll('.module, .community-card, .about-content, .about-image-wrapper, .course-card, .video-library-card').forEach(el => {
     el.style.opacity = '0';
     observer.observe(el);
   });

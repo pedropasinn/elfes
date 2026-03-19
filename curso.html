@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prof. Henrique Elfes | Pequena História das Grandes Ideias</title>
+  <meta name="description" content="Curso de filosofia com o Prof. Henrique Elfes. Uma jornada pelas grandes ideias que moldaram a civilização.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">&#966;</span>
+        <span class="logo-text">Prof. Henrique Elfes</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#modulos">Módulos</a></li>
+        <li><a href="videos.html">Vídeos</a></li>
+        <li><a href="duvidas.html" class="btn btn-nav">Dúvidas</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <p class="hero-tag">Curso de Filosofia</p>
+      <h1 class="hero-title">Pequena História<br>das <em>Grandes Ideias</em></h1>
+      <p class="hero-subtitle">Uma jornada fascinante pelas ideias que moldaram a civilização &mdash; do Sagrado ao Ser, da Alma à Sociedade.</p>
+      <div class="hero-cta">
+        <a href="#modulos" class="btn btn-primary">Explorar Módulos</a>
+        <a href="https://www.youtube.com/channel/UCkEqmUvgwUVwv98TrLrwAaA" target="_blank" rel="noopener" class="btn btn-outline">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          Canal no YouTube
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Módulos</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">17</span>
+          <span class="stat-label">Aulas</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-number">17</span>
+          <span class="stat-label">PDFs</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SOBRE -->
+  <section class="section section-about" id="sobre">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrapper">
+          <div class="about-image-placeholder">
+            <span class="placeholder-icon">&#966;</span>
+            <span class="placeholder-text">Prof. Henrique Elfes</span>
+          </div>
+        </div>
+        <div class="about-content">
+          <p class="section-tag">Sobre o Professor</p>
+          <h2 class="section-title">Henrique Elfes</h2>
+          <p class="about-text">
+            Professor dedicado ao ensino da filosofia de forma acessível e profunda.
+            Através do curso <strong>"Pequena História das Grandes Ideias"</strong>,
+            conduz seus alunos por uma jornada intelectual que vai das ideias pré-filosóficas
+            até as grandes questões metafísicas e antropológicas.
+          </p>
+          <p class="about-text">
+            Com aulas gravadas em vídeo, materiais complementares em PDF e sessões ao vivo
+            para tirar dúvidas, o curso oferece uma experiência de aprendizado completa e interativa.
+          </p>
+          <div class="about-social">
+            <a href="https://www.instagram.com/henrique.elfes/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/channel/UCkEqmUvgwUVwv98TrLrwAaA" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÓDULOS -->
+  <section class="section section-modules" id="modulos">
+    <div class="container">
+      <p class="section-tag center">Conteúdo do Curso</p>
+      <h2 class="section-title center">Módulos &amp; Aulas</h2>
+      <p class="section-desc center">Cada módulo explora um universo de ideias. Clique para expandir e acessar as aulas e materiais.</p>
+
+      <!-- MÓDULO 1 -->
+      <div class="module" id="modulo1">
+        <button class="module-header" aria-expanded="false" aria-controls="module1-content">
+          <div class="module-info">
+            <span class="module-number">Módulo 1</span>
+            <h3 class="module-title">Ideias Pré-filosóficas</h3>
+            <span class="module-count">6 aulas</span>
+          </div>
+          <span class="module-chevron">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </button>
+        <div class="module-content" id="module1-content">
+          <div class="lessons-grid">
+
+            <div class="lesson-card">
+              <div class="lesson-number">01</div>
+              <div class="lesson-body">
+                <h4 class="lesson-title">O Sagrado</h4>
+                <p class="lesson-desc">O centro da religião</p>
+                <div class="lesson-links">
+                  <a href="https://youtu.be/UxXt7lFk-IQ" target="_blank" rel="noopener" class="lesson-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    Assistir aula
+                  </a>
+                  <a href="https://drive.google.com/file/d/1CF9IXIpfnKZq03k_RJtLFO7mzp_7BEOm/view?usp=drive_link" target="_blank" rel="noopener" class="lesson-link lesson-link-pdf">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    PDF &amp; Material
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="lesson-card">
+              <div class="lesson-number">02</div>
+              <div class="lesson-body">
+                <h4 class="lesson-title">As Religiões</h4>
+                <p class="lesson-desc">Resposta diante do Sagrado</p>
+                <div class="lesson-links">
+                  <a href="https://youtu.be/2Uk26VFMEoQ" target="_blank" rel="noopener" class="lesson-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    Assistir aula
+                  </a>
+                  <a href="https://drive.google.com/file/d/1Ond9dfd5y_K7DDVroxU68MCl0HRoKk5O/view?usp=drive_link" target="_blank" rel="noopener" class="lesson-link lesson-link-pdf">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    PDF &amp; Material
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="lesson-card">
+              <div class="lesson-number">03</div>
+              <div class="lesson-body">
+                <h4 class="lesson-title">O Pecado</h4>
+                <p class="lesson-desc">O sofrimento humano</p>
+                <div class="lesson-links">
+                  <a href="https://youtu.be/Hnev4QXeUdQ" target="_blank" rel="noopener" class="lesson-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    Assistir aula
+                  </a>
+                  <a href="https://drive.google.com/file/d/1QWnxUuhboVcw8054aVYMnoFYhrlXQCT7/view?usp=drive_link" target="_blank" rel="noopener" class="lesson-link lesson-link-pdf">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    PDF &amp; Material
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="lesson-card">
+              <div class="lesson-number">04</div>
+              <div class="lesson-body">
+                <h4 class="lesson-title">A Morte</h4>
+                <p class="lesson-desc">Ser ou não ser?</p>
+                <div class="lesson-links">
+                  <a href="https://youtu.be/6PGfquY3PdI" target="_blank" rel="noopener" class="lesson-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    Assistir aula
+                  </a>
+                  <a href="https://drive.google.com/file/d/1aLASxethS7VJloHk2UJ5GLKsBYHT0fy5/view?usp=sharing" target="_blank" rel="noopener" class="lesson-link lesson-link-pdf">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    PDF &amp; Material
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="lesson-card">
+              <div class="lesson-number">05</div>
+              <div class="lesson-body">
+                <h4 class="lesson-title">O Destino</h4>
+                <p class="lesson-desc">Eu sou livre?</p>
+                <div class="lesson-links">
+                  <a href="https://youtu.be/P8R-DZeYzFY" target="_blank" rel="noopener" class="lesson-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    Assistir aula
+                  </a>
+                  <a href="https://drive.google.com/file/d/1tKbviJ7vhQT48pGxQQVZKtsIuBAjeyMF/view?usp=drive_link" target="_blank" rel="noopener" class="lesson-link lesson-link-pdf">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    PDF &amp; Material
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="lesson-card">
+              <div class="lesson-number">06</div>
+              <div class="lesson-body">
+                <h4 class="lesson-title">A Salvação</h4>
+                <p class="lesson-desc">A busca da felicidade</p>
+                <div class="lesson-links">
+                  <a href="https://youtu.be/VeVbXnG1p8g" target="_blank" rel="noopener" class="lesson-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    Assistir aula
+                  </a>
+                  <a href="https://drive.google.com/file/d/1gbw4shO5nT0qjhSscb_q2f-2XoPJA0VM/view?usp=drive_link" target="_blank" rel="noopener" class="lesson-link lesson-link-pdf">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    PDF &amp; Material
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- MÓDULO 2 -->
+      <div class="module" id="modulo2">
+        <button class="module-header" aria-expanded="false" aria-controls="module2-content">
+          <div class="module-info">
+            <span class="module-number">Módulo 2</span>
+            <h3 class="module-title">Metafísica</h3>
+            <span class="module-count">6 aulas</span>
+          </div>
+          <span class="module-chevron">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </button>
+        <div class="module-content" id="module2-content">
+          <div class="lessons-grid">
+
+            <div class="lesson-card">
+              <div class="lesson-number">01</div>
+              <div class="lesson-body">
+                <h4 class="lesson-title">A Ordem</h4>
+                <p class="lesson-desc">A ordem do universo</p>
+                <div class="lesson-links">
+                  <a href="https://youtu.be/bintEGCRokY" target="_blank" rel="noopener" class="lesson-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    Assistir aula
+                  </a>
+                  <a href="https://drive.google.com/file/d/1NTZ1Yvk3yWgS_0qCFsJA5j0TOAJkOUcf/view?usp=sharing" target="_blank" rel="noopener" class="lesson-link lesson-link-pdf">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    PDF &amp; Material
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="lesson-card">
+              <div class="lesson-number">02</div>
+              <div class="lesson-body">
+                <h4 class="lesson-title">As Formas</h4>
+                <p class="lesson-desc">O que as coisas são?</p>
+                <div class="lesson-links">
+                  <a href="https://youtu.be/fN9LRUFdXpY" target="_blank" rel="noopener" class="lesson-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    Assistir aula
+                  </a>
+                  <a href="https://drive.google.com/file/d/17icAQprsmQlwXSmvo3Z67qK2inVFvf70/view?usp=sharing" target="_blank" rel="noopener" class="lesson-link lesson-link-pdf">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    PDF &amp; Material
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="lesson-card">
+              <div class="lesson-number">03</div>
+              <div class="lesson-body">
+                <h4 class="lesson-title">A Matéria</h4>
+                <p class="lesson-desc">De que as coisas são feitas?</p>
+                <div class="lesson-links">
+                  <a href="https://youtu.be/cisvy53X6ZY" target="_blank" rel="noopener" class="lesson-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    Assistir aula
+                  </a>
+                  <a href="https://drive.google.com/file/d/16XKo3Pr9AeFmtydmaYLJpx-9TDu3_djd/view?usp=sharing" target="_blank" rel="noopener" class="lesson-link lesson-link-pdf">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    PDF &amp; Material
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="lesson-card">
+              <div class="lesson-number">04</div>
+              <div class="lesson-body">
+                <h4 class="lesson-title">O Movimento</h4>
+                <p class="lesson-desc">A mudança das coisas</p>
+                <div class="lesson-links">
+                  <a href="https://youtu.be/-N2zRnOswGQ" target="_blank" rel="noopener" class="lesson-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    Assistir aula
+                  </a>
+                  <a href="https://drive.google.com/file/d/1V8kzlvXk2mL__ulpMhB1bnl9QmkbJ15j/view?usp=sharing" target="_blank" rel="noopener" class="lesson-link lesson-link-pdf">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    PDF &amp; Material
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="lesson-card">
+              <div class="lesson-number">05</div>
+              <div class="lesson-body">
+                <h4 class="lesson-title">As Causas</h4>
+                <p class="lesson-desc">Por que as coisas acontecem?</p>
+                <div class="lesson-links">
+                  <a href="https://youtu.be/vzfrcalM4ok" target="_blank" rel="noopener" class="lesson-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    Assistir aula
+                  </a>
+                  <a href="https://drive.google.com/file/d/1KoHYkRDJHSXXduCD12kX0Drp5ISBGO8U/view?usp=sharing" target="_blank" rel="noopener" class="lesson-link lesson-link-pdf">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    PDF &amp; Material
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="lesson-card">
+              <div class="lesson-number">06</div>
+              <div class="lesson-body">
+                <h4 class="lesson-title">O Ser</h4>
+                <p class="lesson-desc">A questão fundamental</p>
+                <div class="lesson-links">
+                  <a href="https://youtu.be/AGucL72L7fE" target="_blank" rel="noopener" class="lesson-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    Assistir aula
+                  </a>
+                  <a href="https://drive.google.com/file/d/1ioi5t2XiseFE1VxkOh_1ohBwQ6P4mef2/view?usp=sharing" target="_blank" rel="noopener" class="lesson-link lesson-link-pdf">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    PDF &amp; Material
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- MÓDULO 3 -->
+      <div class="module" id="modulo3">
+        <button class="module-header" aria-expanded="false" aria-controls="module3-content">
+          <div class="module-info">
+            <span class="module-number">Módulo 3</span>
+            <h3 class="module-title">Antropologia Filosófica</h3>
+            <span class="module-count">5 aulas</span>
+          </div>
+          <span class="module-chevron">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </span>
+        </button>
+        <div class="module-content" id="module3-content">
+          <div class="lessons-grid">
+
+            <div class="lesson-card">
+              <div class="lesson-number">01</div>
+              <div class="lesson-body">
+                <h4 class="lesson-title">A Vida</h4>
+                <p class="lesson-desc">O que é estar vivo?</p>
+                <div class="lesson-links">
+                  <a href="https://youtu.be/SThINqynOlk" target="_blank" rel="noopener" class="lesson-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    Assistir aula
+                  </a>
+                  <a href="https://drive.google.com/file/d/1m_dfaFKGmIkq4CKS6emvEwGzce06SCij/view?usp=drive_link" target="_blank" rel="noopener" class="lesson-link lesson-link-pdf">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    PDF &amp; Material
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="lesson-card">
+              <div class="lesson-number">02</div>
+              <div class="lesson-body">
+                <h4 class="lesson-title">A Alma</h4>
+                <p class="lesson-desc">O princípio vital</p>
+                <div class="lesson-links">
+                  <a href="https://youtu.be/j8ym9VlBYJs" target="_blank" rel="noopener" class="lesson-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    Assistir aula
+                  </a>
+                  <a href="https://drive.google.com/file/d/1DHgvbRsN1s5mwlB72ymjtN4IrNkt1543/view?usp=drive_link" target="_blank" rel="noopener" class="lesson-link lesson-link-pdf">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    PDF &amp; Material
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="lesson-card">
+              <div class="lesson-number">03</div>
+              <div class="lesson-body">
+                <h4 class="lesson-title">O Corpo</h4>
+                <p class="lesson-desc">Matéria e forma humana</p>
+                <div class="lesson-links">
+                  <a href="https://youtu.be/tVqa1Wxehmc" target="_blank" rel="noopener" class="lesson-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    Assistir aula
+                  </a>
+                  <a href="https://drive.google.com/file/d/16lgLVhHrVeEzf0ScXtbfwukz1Yeo81GU/view?usp=drive_link" target="_blank" rel="noopener" class="lesson-link lesson-link-pdf">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    PDF &amp; Material
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="lesson-card">
+              <div class="lesson-number">04</div>
+              <div class="lesson-body">
+                <h4 class="lesson-title">A Pessoa</h4>
+                <p class="lesson-desc">O que nos torna humanos?</p>
+                <div class="lesson-links">
+                  <a href="https://youtu.be/98NCOCxTVHs" target="_blank" rel="noopener" class="lesson-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    Assistir aula
+                  </a>
+                  <a href="https://drive.google.com/file/d/1UF_FJpLxuxmtzRkFn1rYkbWEa2LNlhF7/view?usp=drive_link" target="_blank" rel="noopener" class="lesson-link lesson-link-pdf">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    PDF &amp; Material
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="lesson-card">
+              <div class="lesson-number">05</div>
+              <div class="lesson-body">
+                <h4 class="lesson-title">A Sociedade</h4>
+                <p class="lesson-desc">O ser humano em comunidade</p>
+                <div class="lesson-links">
+                  <a href="https://youtu.be/rFztfDXuuek" target="_blank" rel="noopener" class="lesson-link">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                    Assistir aula
+                  </a>
+                  <a href="https://drive.google.com/file/d/1GNqov_uyBmO-SzV39HZzmrxWyicNDyBY/view?usp=drive_link" target="_blank" rel="noopener" class="lesson-link lesson-link-pdf">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    PDF &amp; Material
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMUNIDADE -->
+  <section class="section section-community" id="comunidade">
+    <div class="container">
+      <p class="section-tag center">Aprenda em Comunidade</p>
+      <h2 class="section-title center">Tire suas Dúvidas</h2>
+      <p class="section-desc center">Participe das aulas ao vivo de tira-dúvidas e conecte-se com outros estudantes de filosofia.</p>
+      <div class="community-grid">
+        <a href="https://chat.whatsapp.com/IrNP0bLV4xx37dJFRk97vf" target="_blank" rel="noopener" class="community-card">
+          <div class="community-icon whatsapp-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          </div>
+          <h3 class="community-card-title">Grupo do WhatsApp</h3>
+          <p class="community-card-desc">Participe das aulas ao vivo de tira-dúvidas com o professor.</p>
+          <span class="community-card-cta">Entrar no grupo &rarr;</span>
+        </a>
+        <a href="duvidas.html" target="_blank" rel="noopener" class="community-card">
+          <div class="community-icon form-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          </div>
+          <h3 class="community-card-title">Registrar Dúvidas</h3>
+          <p class="community-card-desc">Envie suas perguntas pelo formulário e o professor responderá em aula.</p>
+          <span class="community-card-cta">Enviar dúvida &rarr;</span>
+        </a>
+        <a href="https://www.youtube.com/channel/UCkEqmUvgwUVwv98TrLrwAaA" target="_blank" rel="noopener" class="community-card">
+          <div class="community-icon youtube-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </div>
+          <h3 class="community-card-title">Canal no YouTube</h3>
+          <p class="community-card-desc">Todas as aulas disponíveis gratuitamente no canal do professor.</p>
+          <span class="community-card-cta">Acessar canal &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contato">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-icon">&#966;</span>
+            <span class="logo-text">Prof. Henrique Elfes</span>
+          </div>
+          <p class="footer-tagline">Pequena História das Grandes Ideias</p>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/henrique.elfes/" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </a>
+            <a href="https://www.youtube.com/channel/UCkEqmUvgwUVwv98TrLrwAaA" target="_blank" rel="noopener" aria-label="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4 class="footer-heading">Módulos</h4>
+          <a href="#modulo1">Ideias Pré-filosóficas</a>
+          <a href="#modulo2">Metafísica</a>
+          <a href="#modulo3">Antropologia Filosófica</a>
+        </div>
+        <div class="footer-links">
+          <h4 class="footer-heading">Links</h4>
+          <a href="https://www.youtube.com/channel/UCkEqmUvgwUVwv98TrLrwAaA" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://www.instagram.com/henrique.elfes/" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://chat.whatsapp.com/IrNP0bLV4xx37dJFRk97vf" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="duvidas.html" target="_blank" rel="noopener">Formulário de Dúvidas</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Prof. Henrique Elfes. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LESSON PEEK MODAL -->
+  <div class="peek-overlay" id="peekOverlay"></div>
+  <aside class="peek-modal" id="peekModal">
+    <div class="peek-header">
+      <div class="peek-header-info">
+        <span class="peek-module-badge" id="peekModuleBadge"></span>
+        <h2 class="peek-title" id="peekTitle"></h2>
+        <p class="peek-desc" id="peekDesc"></p>
+      </div>
+      <div class="peek-header-actions">
+        <a href="#" target="_blank" rel="noopener" class="peek-external-link" id="peekYoutubeLink" title="Abrir no YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener" class="peek-external-link" id="peekPdfLink" title="Abrir PDF">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        </a>
+        <button class="peek-close" id="peekClose" aria-label="Fechar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="peek-body">
+      <div class="peek-section">
+        <div class="peek-section-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/><path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#fff"/></svg>
+          <span>Aula em Vídeo</span>
+        </div>
+        <div class="peek-video-container">
+          <iframe id="peekVideo" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="peek-section">
+        <div class="peek-section-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          <span>Material Complementar (PDF)</span>
+        </div>
+        <div class="peek-pdf-container">
+          <iframe id="peekPdf" src="" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <script src="script.js"></script>
+</body>
+</html>
