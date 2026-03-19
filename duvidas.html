@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar Dúvidas | Prof. Henrique Elfes</title>
+  <meta name="description" content="Envie suas dúvidas sobre o curso Pequena História das Grandes Ideias do Prof. Henrique Elfes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Form-specific styles */
+    .form-page {
+      min-height: 100vh;
+      padding: 120px 0 80px;
+      background: var(--color-bg-alt);
+    }
+
+    .form-container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .form-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .form-header .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-accent);
+      margin-bottom: 24px;
+      transition: all var(--transition);
+    }
+
+    .form-header .back-link:hover {
+      transform: translateX(-4px);
+    }
+
+    .form-intro {
+      font-size: 16px;
+      color: var(--color-text-light);
+      line-height: 1.7;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .form-card {
+      background: var(--color-card);
+      border-radius: var(--radius);
+      padding: 48px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--color-border);
+    }
+
+    .form-group {
+      margin-bottom: 32px;
+    }
+
+    .form-group:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+
+    .form-label .required {
+      color: #e53e3e;
+      margin-left: 2px;
+    }
+
+    .form-label .optional {
+      font-weight: 400;
+      font-size: 13px;
+      color: var(--color-text-light);
+      margin-left: 4px;
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+      width: 100%;
+      padding: 14px 18px;
+      font-family: var(--font-primary);
+      font-size: 15px;
+      color: var(--color-text);
+      background: var(--color-bg-alt);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      transition: all var(--transition);
+      outline: none;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      border-color: var(--color-accent);
+      box-shadow: 0 0 0 3px rgba(77, 101, 255, 0.1);
+      background: #fff;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: #b0b0be;
+    }
+
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    /* Radio & Checkbox group */
+    .radio-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+      padding: 10px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+      transition: all var(--transition);
+      background: var(--color-bg-alt);
+    }
+
+    .radio-option:hover {
+      border-color: var(--color-accent);
+      background: #fff;
+    }
+
+    .radio-option input[type="radio"],
+    .radio-option input[type="checkbox"] {
+      accent-color: var(--color-accent);
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    .radio-option span {
+      font-size: 15px;
+      color: var(--color-text);
+    }
+
+    .radio-option.has-input {
+      flex-wrap: wrap;
+    }
+
+    .radio-option .other-input {
+      flex: 1;
+      min-width: 160px;
+      padding: 8px 12px;
+      border: none;
+      border-bottom: 1px solid var(--color-border);
+      background: transparent;
+      font-family: var(--font-primary);
+      font-size: 14px;
+      color: var(--color-text);
+      outline: none;
+      transition: border-color var(--transition);
+    }
+
+    .radio-option .other-input:focus {
+      border-bottom-color: var(--color-accent);
+    }
+
+    /* Scale */
+    .scale-group {
+      margin-top: 8px;
+    }
+
+    .scale-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .scale-labels span {
+      font-size: 12px;
+      color: var(--color-text-light);
+      font-weight: 500;
+    }
+
+    .scale-options {
+      display: flex;
+      gap: 0;
+      justify-content: space-between;
+    }
+
+    .scale-option {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .scale-option input[type="radio"] {
+      display: none;
+    }
+
+    .scale-option .scale-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-text-light);
+      transition: all var(--transition);
+      background: var(--color-bg-alt);
+      cursor: pointer;
+    }
+
+    .scale-option:hover .scale-btn {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+
+    .scale-option input[type="radio"]:checked + .scale-btn {
+      background: var(--color-accent);
+      border-color: var(--color-accent);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(77, 101, 255, 0.3);
+    }
+
+    /* Select for modules */
+    .select-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .select-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all var(--transition);
+      background: var(--color-bg-alt);
+    }
+
+    .select-option:hover {
+      border-color: var(--color-accent);
+      background: #fff;
+    }
+
+    .select-option input[type="radio"] {
+      accent-color: var(--color-accent);
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .select-option span {
+      font-size: 14px;
+      color: var(--color-text);
+    }
+
+    /* Divider */
+    .form-divider {
+      height: 1px;
+      background: var(--color-border);
+      margin: 36px 0;
+    }
+
+    /* Submit */
+    .form-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 40px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .btn-submit {
+      background: var(--color-accent);
+      color: #fff;
+      padding: 16px 40px;
+      font-size: 15px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all var(--transition);
+      font-family: var(--font-primary);
+    }
+
+    .btn-submit:hover {
+      background: var(--color-accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(77, 101, 255, 0.3);
+    }
+
+    .btn-clear {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-text-light);
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: var(--font-primary);
+      transition: color var(--transition);
+    }
+
+    .btn-clear:hover {
+      color: var(--color-text);
+    }
+
+    /* Success message */
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 60px 32px;
+    }
+
+    .form-success.show {
+      display: block;
+    }
+
+    .form-success .success-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(77, 101, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      color: var(--color-accent);
+    }
+
+    .form-success h3 {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 12px;
+    }
+
+    .form-success p {
+      font-size: 16px;
+      color: var(--color-text-light);
+      margin-bottom: 32px;
+    }
+
+    /* Responsive */
+    @media (max-width: 767px) {
+      .form-card {
+        padding: 28px 20px;
+      }
+
+      .scale-option .scale-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 12px;
+      }
+
+      .select-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-actions {
+        flex-direction: column;
+      }
+
+      .btn-submit {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">&#966;</span>
+        <span class="logo-text">Prof. Henrique Elfes</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#modulos">Módulos</a></li>
+        <li><a href="index.html#comunidade">Comunidade</a></li>
+        <li><a href="duvidas.html" class="btn btn-nav">Dúvidas</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- FORM PAGE -->
+  <main class="form-page">
+    <div class="container form-container">
+
+      <div class="form-header">
+        <a href="index.html" class="back-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          Voltar ao curso
+        </a>
+        <p class="section-tag">Tire suas dúvidas</p>
+        <h1 class="section-title">Dúvidas do Curso</h1>
+        <p class="form-intro">
+          Agradeço muito o seu interesse pelo curso! Para facilitar a dinâmica do nosso encontro de tira-dúvidas, gostaria de entender melhor qual a sua dúvida.
+        </p>
+      </div>
+
+      <div class="form-card">
+        <form id="duvidaForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdGiXpeM6n-dFUoB740oz0BhwUi1olrv3h691-ePIsvFwk3Cw/formResponse" method="POST" target="hidden_iframe">
+
+          <!-- Nome -->
+          <div class="form-group">
+            <label class="form-label">
+              Nome <span class="optional">(opcional)</span>
+            </label>
+            <input type="text" name="entry.YOUR_NAME_ENTRY" class="form-input" placeholder="Seu nome">
+          </div>
+
+          <!-- Email -->
+          <div class="form-group">
+            <label class="form-label">
+              Email <span class="required">*</span>
+            </label>
+            <input type="email" name="entry.YOUR_EMAIL_ENTRY" class="form-input" placeholder="seu@email.com" required>
+          </div>
+
+          <div class="form-divider"></div>
+
+          <!-- Como conheceu -->
+          <div class="form-group">
+            <label class="form-label">
+              Como conheceu o Prof. Henrique Elfes? <span class="required">*</span>
+            </label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="entry.YOUR_CONHECEU_ENTRY" value="Instagram" required>
+                <span>Instagram</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="entry.YOUR_CONHECEU_ENTRY" value="Youtube">
+                <span>YouTube</span>
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="entry.YOUR_CONHECEU_ENTRY" value="Aulas e palestras">
+                <span>Aulas e palestras</span>
+              </label>
+              <label class="radio-option has-input">
+                <input type="radio" name="entry.YOUR_CONHECEU_ENTRY" value="__other_option__" id="otherRadio">
+                <span>Outro:</span>
+                <input type="text" class="other-input" placeholder="Especifique..." name="entry.YOUR_CONHECEU_ENTRY.other_option_response" onfocus="document.getElementById('otherRadio').checked=true">
+              </label>
+            </div>
+          </div>
+
+          <div class="form-divider"></div>
+
+          <!-- Satisfação -->
+          <div class="form-group">
+            <label class="form-label">
+              Você está gostando das aulas? <span class="required">*</span>
+            </label>
+            <div class="scale-group">
+              <div class="scale-labels">
+                <span>Pouco satisfeito</span>
+                <span>Muito satisfeito</span>
+              </div>
+              <div class="scale-options">
+                <label class="scale-option">
+                  <input type="radio" name="entry.YOUR_SATISFACAO_ENTRY" value="1" required>
+                  <span class="scale-btn">1</span>
+                </label>
+                <label class="scale-option">
+                  <input type="radio" name="entry.YOUR_SATISFACAO_ENTRY" value="2">
+                  <span class="scale-btn">2</span>
+                </label>
+                <label class="scale-option">
+                  <input type="radio" name="entry.YOUR_SATISFACAO_ENTRY" value="3">
+                  <span class="scale-btn">3</span>
+                </label>
+                <label class="scale-option">
+                  <input type="radio" name="entry.YOUR_SATISFACAO_ENTRY" value="4">
+                  <span class="scale-btn">4</span>
+                </label>
+                <label class="scale-option">
+                  <input type="radio" name="entry.YOUR_SATISFACAO_ENTRY" value="5">
+                  <span class="scale-btn">5</span>
+                </label>
+                <label class="scale-option">
+                  <input type="radio" name="entry.YOUR_SATISFACAO_ENTRY" value="6">
+                  <span class="scale-btn">6</span>
+                </label>
+                <label class="scale-option">
+                  <input type="radio" name="entry.YOUR_SATISFACAO_ENTRY" value="7">
+                  <span class="scale-btn">7</span>
+                </label>
+                <label class="scale-option">
+                  <input type="radio" name="entry.YOUR_SATISFACAO_ENTRY" value="8">
+                  <span class="scale-btn">8</span>
+                </label>
+                <label class="scale-option">
+                  <input type="radio" name="entry.YOUR_SATISFACAO_ENTRY" value="9">
+                  <span class="scale-btn">9</span>
+                </label>
+                <label class="scale-option">
+                  <input type="radio" name="entry.YOUR_SATISFACAO_ENTRY" value="10">
+                  <span class="scale-btn">10</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-divider"></div>
+
+          <!-- Qual aula -->
+          <div class="form-group">
+            <label class="form-label">
+              Você tem dúvida em qual aula? <span class="required">*</span>
+            </label>
+            <div class="select-grid">
+              <label class="select-option">
+                <input type="radio" name="entry.YOUR_AULA_ENTRY" value="Módulo I - Aula 1" required>
+                <span>Módulo I - Aula 1</span>
+              </label>
+              <label class="select-option">
+                <input type="radio" name="entry.YOUR_AULA_ENTRY" value="Módulo I - Aula 2">
+                <span>Módulo I - Aula 2</span>
+              </label>
+              <label class="select-option">
+                <input type="radio" name="entry.YOUR_AULA_ENTRY" value="Módulo I - Aula 3">
+                <span>Módulo I - Aula 3</span>
+              </label>
+              <label class="select-option">
+                <input type="radio" name="entry.YOUR_AULA_ENTRY" value="Módulo I - Aula 4">
+                <span>Módulo I - Aula 4</span>
+              </label>
+              <label class="select-option">
+                <input type="radio" name="entry.YOUR_AULA_ENTRY" value="Módulo I - Aula 5">
+                <span>Módulo I - Aula 5</span>
+              </label>
+              <label class="select-option">
+                <input type="radio" name="entry.YOUR_AULA_ENTRY" value="Módulo I - Aula 6">
+                <span>Módulo I - Aula 6</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-divider"></div>
+
+          <!-- Dúvida -->
+          <div class="form-group">
+            <label class="form-label">
+              Qual a sua dúvida? <span class="required">*</span>
+            </label>
+            <textarea name="entry.YOUR_DUVIDA_ENTRY" class="form-textarea" placeholder="Descreva sua dúvida aqui..." required></textarea>
+          </div>
+
+          <!-- Feedback -->
+          <div class="form-group">
+            <label class="form-label">
+              Feedback sobre o curso <span class="optional">(opcional)</span>
+            </label>
+            <textarea name="entry.YOUR_FEEDBACK_ENTRY" class="form-textarea" placeholder="Sugestões sobre metodologia, material, etc."></textarea>
+          </div>
+
+          <!-- Actions -->
+          <div class="form-actions">
+            <button type="submit" class="btn-submit">Enviar Dúvida</button>
+            <button type="reset" class="btn-clear">Limpar formulário</button>
+          </div>
+
+        </form>
+
+        <!-- Success message -->
+        <div class="form-success" id="formSuccess">
+          <div class="success-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Dúvida Enviada!</h3>
+          <p>Obrigado por enviar sua pergunta. O professor responderá na próxima aula ao vivo.</p>
+          <a href="index.html" class="btn btn-primary">Voltar ao Curso</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        <p>&copy; 2025 Prof. Henrique Elfes. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="onFormSubmit()"></iframe>
+
+  <script>
+    // Mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      const spans = menuToggle.querySelectorAll('span');
+      const isOpen = navLinks.classList.contains('open');
+      if (isOpen) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        spans[0].style.transform = '';
+        spans[1].style.opacity = '';
+        spans[2].style.transform = '';
+      }
+    });
+
+    // Form submit handler
+    let submitted = false;
+    function onFormSubmit() {
+      if (submitted) {
+        document.getElementById('duvidaForm').style.display = 'none';
+        document.getElementById('formSuccess').classList.add('show');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    document.getElementById('duvidaForm').addEventListener('submit', function() {
+      submitted = true;
+    });
+  </script>
+</body>
+</html>
