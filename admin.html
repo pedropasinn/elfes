@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Dúvidas | Prof. Henrique Elfes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #4d65ff;
+      --primary: #1a1a2e;
+      --bg: #f7f7f9;
+      --card: #ffffff;
+      --border: #e4e4ec;
+      --text: #2c2c3a;
+      --text-light: #6b6b7b;
+      --gold: #c9a84c;
+      --radius: 12px;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--bg); color: var(--text); }
+
+    .admin-header {
+      background: var(--primary);
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .admin-header h1 {
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      font-size: 22px;
+    }
+    .admin-header .stats {
+      display: flex;
+      gap: 24px;
+    }
+    .admin-header .stat-box {
+      text-align: center;
+    }
+    .admin-header .stat-box .num {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--gold);
+    }
+    .admin-header .stat-box .lbl {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.4);
+    }
+
+    .admin-bar {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .admin-bar input {
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+    }
+    .admin-bar input:focus { border-color: var(--accent); }
+    .admin-bar button {
+      padding: 10px 20px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .admin-bar button:hover { background: #3a4fdd; }
+    .admin-bar .btn-csv {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .admin-bar .btn-csv:hover { border-color: var(--accent); color: var(--accent); }
+
+    .login-screen {
+      max-width: 400px;
+      margin: 120px auto;
+      text-align: center;
+      padding: 0 24px;
+    }
+    .login-screen h2 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 24px;
+      font-size: 28px;
+      color: var(--primary);
+    }
+    .login-screen input {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 15px;
+      margin-bottom: 16px;
+      outline: none;
+    }
+    .login-screen button {
+      width: 100%;
+      padding: 14px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .login-screen button:hover { background: #3a4fdd; }
+    .login-error {
+      color: #e53e3e;
+      font-size: 14px;
+      margin-top: 8px;
+      display: none;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 16px;
+    }
+
+    .duvida-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      transition: box-shadow 0.2s;
+    }
+    .duvida-card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+
+    .duvida-card .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .duvida-card .card-aula {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      background: rgba(77,101,255,0.08);
+      padding: 4px 10px;
+      border-radius: 50px;
+    }
+    .duvida-card .card-date {
+      font-size: 12px;
+      color: var(--text-light);
+    }
+    .duvida-card .card-question {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+    .duvida-card .card-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    .duvida-card .card-meta span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .duvida-card .card-feedback {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--text-light);
+      font-style: italic;
+    }
+    .satisfaction-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .sat-low { background: #e53e3e; }
+    .sat-mid { background: var(--gold); }
+    .sat-high { background: #38a169; }
+
+    .empty-state {
+      text-align: center;
+      padding: 80px 24px;
+      color: var(--text-light);
+    }
+    .empty-state h3 { font-size: 20px; margin-bottom: 8px; color: var(--text); }
+
+    @media (max-width: 767px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      .admin-header { padding: 16px 20px; }
+      .admin-bar { padding: 12px 20px; }
+      .container { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- LOGIN SCREEN -->
+  <div id="loginScreen" class="login-screen">
+    <h2>Admin - Dúvidas</h2>
+    <p style="color: var(--text-light); margin-bottom: 24px; font-size: 15px;">Acesse o painel de respostas dos alunos.</p>
+    <input type="password" id="senhaInput" placeholder="Senha de administrador" autofocus>
+    <button onclick="doLogin()">Entrar</button>
+    <p class="login-error" id="loginError">Senha incorreta.</p>
+  </div>
+
+  <!-- ADMIN PANEL (hidden until login) -->
+  <div id="adminPanel" style="display:none;">
+    <div class="admin-header">
+      <h1>Painel de Dúvidas</h1>
+      <div class="stats">
+        <div class="stat-box">
+          <div class="num" id="totalCount">-</div>
+          <div class="lbl">Total</div>
+        </div>
+        <div class="stat-box">
+          <div class="num" id="avgSat">-</div>
+          <div class="lbl">Satisfação Média</div>
+        </div>
+      </div>
+    </div>
+    <div class="admin-bar">
+      <input type="text" id="searchInput" placeholder="Buscar por nome, email ou dúvida..." style="flex:1;min-width:200px;">
+      <button class="btn-csv" onclick="exportCSV()">Exportar CSV</button>
+      <button onclick="loadData()">Atualizar</button>
+    </div>
+    <div class="container">
+      <div class="cards-grid" id="cardsGrid"></div>
+      <div class="empty-state" id="emptyState" style="display:none;">
+        <h3>Nenhuma dúvida registrada</h3>
+        <p>As dúvidas dos alunos aparecerão aqui.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let senha = '';
+    let allData = [];
+
+    // Login
+    document.getElementById('senhaInput').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') doLogin();
+    });
+
+    async function doLogin() {
+      senha = document.getElementById('senhaInput').value;
+      try {
+        const res = await fetch(`/api/duvidas?senha=${encodeURIComponent(senha)}`);
+        if (!res.ok) throw new Error();
+        document.getElementById('loginScreen').style.display = 'none';
+        document.getElementById('adminPanel').style.display = '';
+        await loadData();
+      } catch {
+        document.getElementById('loginError').style.display = 'block';
+      }
+    }
+
+    async function loadData() {
+      const res = await fetch(`/api/duvidas?senha=${encodeURIComponent(senha)}`);
+      const json = await res.json();
+      allData = json.duvidas || [];
+      document.getElementById('totalCount').textContent = json.total;
+
+      if (allData.length > 0) {
+        const avg = (allData.reduce((s, d) => s + d.satisfacao, 0) / allData.length).toFixed(1);
+        document.getElementById('avgSat').textContent = avg;
+      }
+
+      renderCards(allData);
+    }
+
+    function renderCards(data) {
+      const grid = document.getElementById('cardsGrid');
+      const empty = document.getElementById('emptyState');
+
+      if (data.length === 0) {
+        grid.innerHTML = '';
+        empty.style.display = '';
+        return;
+      }
+
+      empty.style.display = 'none';
+      grid.innerHTML = data.map(d => {
+        const date = new Date(d.data).toLocaleDateString('pt-BR', {
+          day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit'
+        });
+        const satClass = d.satisfacao <= 4 ? 'sat-low' : d.satisfacao <= 7 ? 'sat-mid' : 'sat-high';
+        const feedbackHtml = d.feedback
+          ? `<div class="card-feedback">"${d.feedback}"</div>`
+          : '';
+
+        return `
+          <div class="duvida-card">
+            <div class="card-top">
+              <span class="card-aula">${d.aula}</span>
+              <span class="card-date">${date}</span>
+            </div>
+            <div class="card-question">${d.duvida}</div>
+            <div class="card-meta">
+              <span><strong>${d.nome}</strong></span>
+              <span>${d.email}</span>
+              <span>Via ${d.como_conheceu}</span>
+              <span class="satisfaction-badge ${satClass}">${d.satisfacao}</span>
+            </div>
+            ${feedbackHtml}
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Search filter
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase();
+      const filtered = allData.filter(d =>
+        d.nome.toLowerCase().includes(q) ||
+        d.email.toLowerCase().includes(q) ||
+        d.duvida.toLowerCase().includes(q) ||
+        d.aula.toLowerCase().includes(q)
+      );
+      renderCards(filtered);
+    });
+
+    function exportCSV() {
+      window.open(`/api/duvidas?senha=${encodeURIComponent(senha)}&format=csv`);
+    }
+  </script>
+</body>
+</html>

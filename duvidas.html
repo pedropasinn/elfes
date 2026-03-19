@@ -434,14 +434,14 @@
       </div>
 
       <div class="form-card">
-        <form id="duvidaForm" action="https://docs.google.com/forms/d/e/1FAIpQLSdGiXpeM6n-dFUoB740oz0BhwUi1olrv3h691-ePIsvFwk3Cw/formResponse" method="POST" target="hidden_iframe">
+        <form id="duvidaForm">
 
           <!-- Nome -->
           <div class="form-group">
             <label class="form-label">
               Nome <span class="optional">(opcional)</span>
             </label>
-            <input type="text" name="entry.YOUR_NAME_ENTRY" class="form-input" placeholder="Seu nome">
+            <input type="text" name="nome" class="form-input" placeholder="Seu nome">
           </div>
 
           <!-- Email -->
@@ -449,7 +449,7 @@
             <label class="form-label">
               Email <span class="required">*</span>
             </label>
-            <input type="email" name="entry.YOUR_EMAIL_ENTRY" class="form-input" placeholder="seu@email.com" required>
+            <input type="email" name="email" class="form-input" placeholder="seu@email.com" required>
           </div>
 
           <div class="form-divider"></div>
@@ -461,21 +461,21 @@
             </label>
             <div class="radio-group">
               <label class="radio-option">
-                <input type="radio" name="entry.YOUR_CONHECEU_ENTRY" value="Instagram" required>
+                <input type="radio" name="como_conheceu" value="Instagram" required>
                 <span>Instagram</span>
               </label>
               <label class="radio-option">
-                <input type="radio" name="entry.YOUR_CONHECEU_ENTRY" value="Youtube">
+                <input type="radio" name="como_conheceu" value="YouTube">
                 <span>YouTube</span>
               </label>
               <label class="radio-option">
-                <input type="radio" name="entry.YOUR_CONHECEU_ENTRY" value="Aulas e palestras">
+                <input type="radio" name="como_conheceu" value="Aulas e palestras">
                 <span>Aulas e palestras</span>
               </label>
               <label class="radio-option has-input">
-                <input type="radio" name="entry.YOUR_CONHECEU_ENTRY" value="__other_option__" id="otherRadio">
+                <input type="radio" name="como_conheceu" value="Outro" id="otherRadio">
                 <span>Outro:</span>
-                <input type="text" class="other-input" placeholder="Especifique..." name="entry.YOUR_CONHECEU_ENTRY.other_option_response" onfocus="document.getElementById('otherRadio').checked=true">
+                <input type="text" class="other-input" placeholder="Especifique..." id="otherInput" onfocus="document.getElementById('otherRadio').checked=true">
               </label>
             </div>
           </div>
@@ -494,43 +494,43 @@
               </div>
               <div class="scale-options">
                 <label class="scale-option">
-                  <input type="radio" name="entry.YOUR_SATISFACAO_ENTRY" value="1" required>
+                  <input type="radio" name="satisfacao" value="1" required>
                   <span class="scale-btn">1</span>
                 </label>
                 <label class="scale-option">
-                  <input type="radio" name="entry.YOUR_SATISFACAO_ENTRY" value="2">
+                  <input type="radio" name="satisfacao" value="2">
                   <span class="scale-btn">2</span>
                 </label>
                 <label class="scale-option">
-                  <input type="radio" name="entry.YOUR_SATISFACAO_ENTRY" value="3">
+                  <input type="radio" name="satisfacao" value="3">
                   <span class="scale-btn">3</span>
                 </label>
                 <label class="scale-option">
-                  <input type="radio" name="entry.YOUR_SATISFACAO_ENTRY" value="4">
+                  <input type="radio" name="satisfacao" value="4">
                   <span class="scale-btn">4</span>
                 </label>
                 <label class="scale-option">
-                  <input type="radio" name="entry.YOUR_SATISFACAO_ENTRY" value="5">
+                  <input type="radio" name="satisfacao" value="5">
                   <span class="scale-btn">5</span>
                 </label>
                 <label class="scale-option">
-                  <input type="radio" name="entry.YOUR_SATISFACAO_ENTRY" value="6">
+                  <input type="radio" name="satisfacao" value="6">
                   <span class="scale-btn">6</span>
                 </label>
                 <label class="scale-option">
-                  <input type="radio" name="entry.YOUR_SATISFACAO_ENTRY" value="7">
+                  <input type="radio" name="satisfacao" value="7">
                   <span class="scale-btn">7</span>
                 </label>
                 <label class="scale-option">
-                  <input type="radio" name="entry.YOUR_SATISFACAO_ENTRY" value="8">
+                  <input type="radio" name="satisfacao" value="8">
                   <span class="scale-btn">8</span>
                 </label>
                 <label class="scale-option">
-                  <input type="radio" name="entry.YOUR_SATISFACAO_ENTRY" value="9">
+                  <input type="radio" name="satisfacao" value="9">
                   <span class="scale-btn">9</span>
                 </label>
                 <label class="scale-option">
-                  <input type="radio" name="entry.YOUR_SATISFACAO_ENTRY" value="10">
+                  <input type="radio" name="satisfacao" value="10">
                   <span class="scale-btn">10</span>
                 </label>
               </div>
@@ -546,28 +546,72 @@
             </label>
             <div class="select-grid">
               <label class="select-option">
-                <input type="radio" name="entry.YOUR_AULA_ENTRY" value="Módulo I - Aula 1" required>
-                <span>Módulo I - Aula 1</span>
+                <input type="radio" name="aula" value="Módulo I - Aula 1 (O Sagrado)" required>
+                <span>M1 - Aula 1: O Sagrado</span>
               </label>
               <label class="select-option">
-                <input type="radio" name="entry.YOUR_AULA_ENTRY" value="Módulo I - Aula 2">
-                <span>Módulo I - Aula 2</span>
+                <input type="radio" name="aula" value="Módulo I - Aula 2 (As Religiões)">
+                <span>M1 - Aula 2: As Religiões</span>
               </label>
               <label class="select-option">
-                <input type="radio" name="entry.YOUR_AULA_ENTRY" value="Módulo I - Aula 3">
-                <span>Módulo I - Aula 3</span>
+                <input type="radio" name="aula" value="Módulo I - Aula 3 (O Pecado)">
+                <span>M1 - Aula 3: O Pecado</span>
               </label>
               <label class="select-option">
-                <input type="radio" name="entry.YOUR_AULA_ENTRY" value="Módulo I - Aula 4">
-                <span>Módulo I - Aula 4</span>
+                <input type="radio" name="aula" value="Módulo I - Aula 4 (A Morte)">
+                <span>M1 - Aula 4: A Morte</span>
               </label>
               <label class="select-option">
-                <input type="radio" name="entry.YOUR_AULA_ENTRY" value="Módulo I - Aula 5">
-                <span>Módulo I - Aula 5</span>
+                <input type="radio" name="aula" value="Módulo I - Aula 5 (O Destino)">
+                <span>M1 - Aula 5: O Destino</span>
               </label>
               <label class="select-option">
-                <input type="radio" name="entry.YOUR_AULA_ENTRY" value="Módulo I - Aula 6">
-                <span>Módulo I - Aula 6</span>
+                <input type="radio" name="aula" value="Módulo I - Aula 6 (A Salvação)">
+                <span>M1 - Aula 6: A Salvação</span>
+              </label>
+              <label class="select-option">
+                <input type="radio" name="aula" value="Módulo II - Aula 1 (A Ordem)">
+                <span>M2 - Aula 1: A Ordem</span>
+              </label>
+              <label class="select-option">
+                <input type="radio" name="aula" value="Módulo II - Aula 2 (As Formas)">
+                <span>M2 - Aula 2: As Formas</span>
+              </label>
+              <label class="select-option">
+                <input type="radio" name="aula" value="Módulo II - Aula 3 (A Matéria)">
+                <span>M2 - Aula 3: A Matéria</span>
+              </label>
+              <label class="select-option">
+                <input type="radio" name="aula" value="Módulo II - Aula 4 (O Movimento)">
+                <span>M2 - Aula 4: O Movimento</span>
+              </label>
+              <label class="select-option">
+                <input type="radio" name="aula" value="Módulo II - Aula 5 (As Causas)">
+                <span>M2 - Aula 5: As Causas</span>
+              </label>
+              <label class="select-option">
+                <input type="radio" name="aula" value="Módulo II - Aula 6 (O Ser)">
+                <span>M2 - Aula 6: O Ser</span>
+              </label>
+              <label class="select-option">
+                <input type="radio" name="aula" value="Módulo III - Aula 1 (A Vida)">
+                <span>M3 - Aula 1: A Vida</span>
+              </label>
+              <label class="select-option">
+                <input type="radio" name="aula" value="Módulo III - Aula 2 (A Alma)">
+                <span>M3 - Aula 2: A Alma</span>
+              </label>
+              <label class="select-option">
+                <input type="radio" name="aula" value="Módulo III - Aula 3 (O Corpo)">
+                <span>M3 - Aula 3: O Corpo</span>
+              </label>
+              <label class="select-option">
+                <input type="radio" name="aula" value="Módulo III - Aula 4 (A Pessoa)">
+                <span>M3 - Aula 4: A Pessoa</span>
+              </label>
+              <label class="select-option">
+                <input type="radio" name="aula" value="Módulo III - Aula 5 (A Sociedade)">
+                <span>M3 - Aula 5: A Sociedade</span>
               </label>
             </div>
           </div>
@@ -579,7 +623,7 @@
             <label class="form-label">
               Qual a sua dúvida? <span class="required">*</span>
             </label>
-            <textarea name="entry.YOUR_DUVIDA_ENTRY" class="form-textarea" placeholder="Descreva sua dúvida aqui..." required></textarea>
+            <textarea name="duvida" class="form-textarea" placeholder="Descreva sua dúvida aqui..." required></textarea>
           </div>
 
           <!-- Feedback -->
@@ -587,12 +631,15 @@
             <label class="form-label">
               Feedback sobre o curso <span class="optional">(opcional)</span>
             </label>
-            <textarea name="entry.YOUR_FEEDBACK_ENTRY" class="form-textarea" placeholder="Sugestões sobre metodologia, material, etc."></textarea>
+            <textarea name="feedback" class="form-textarea" placeholder="Sugestões sobre metodologia, material, etc."></textarea>
           </div>
+
+          <!-- Error message -->
+          <div class="form-error" id="formError" style="display:none; background:rgba(229,62,62,0.08); color:#e53e3e; padding:12px 16px; border-radius:8px; font-size:14px; margin-bottom:16px;"></div>
 
           <!-- Actions -->
           <div class="form-actions">
-            <button type="submit" class="btn-submit">Enviar Dúvida</button>
+            <button type="submit" class="btn-submit" id="btnSubmit">Enviar Dúvida</button>
             <button type="reset" class="btn-clear">Limpar formulário</button>
           </div>
 
@@ -621,8 +668,6 @@
     </div>
   </footer>
 
-  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="onFormSubmit()"></iframe>
-
   <script>
     // Mobile menu
     const menuToggle = document.getElementById('menuToggle');
@@ -643,17 +688,49 @@
     });
 
     // Form submit handler
-    let submitted = false;
-    function onFormSubmit() {
-      if (submitted) {
-        document.getElementById('duvidaForm').style.display = 'none';
+    const form = document.getElementById('duvidaForm');
+    const btnSubmit = document.getElementById('btnSubmit');
+    const formError = document.getElementById('formError');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      formError.style.display = 'none';
+      btnSubmit.disabled = true;
+      btnSubmit.textContent = 'Enviando...';
+
+      const formData = new FormData(form);
+      const body = {
+        nome: formData.get('nome'),
+        email: formData.get('email'),
+        como_conheceu: formData.get('como_conheceu'),
+        como_conheceu_outro: document.getElementById('otherInput').value,
+        satisfacao: formData.get('satisfacao'),
+        aula: formData.get('aula'),
+        duvida: formData.get('duvida'),
+        feedback: formData.get('feedback')
+      };
+
+      try {
+        const res = await fetch('/api/duvidas', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+
+        if (!res.ok) {
+          const err = await res.json();
+          throw new Error(err.error || 'Erro ao enviar.');
+        }
+
+        form.style.display = 'none';
         document.getElementById('formSuccess').classList.add('show');
         window.scrollTo({ top: 0, behavior: 'smooth' });
+      } catch (err) {
+        formError.textContent = err.message;
+        formError.style.display = 'block';
+        btnSubmit.disabled = false;
+        btnSubmit.textContent = 'Enviar Dúvida';
       }
-    }
-
-    document.getElementById('duvidaForm').addEventListener('submit', function() {
-      submitted = true;
     });
   </script>
 </body>
