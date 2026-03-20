@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula — Prof. Henrique Elfes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="diagramas.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="imagens/logo.png" alt="HE" class="nav-logo-img">
+        <span class="logo-text">Prof. Henrique Elfes</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="historia-filosofia.html#aulas">Aulas</a></li>
+        <li><a href="curso.html">Grandes Ideias</a></li>
+        <li><a href="duvidas.html" class="btn btn-nav">Duvidas</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="diagrams-hero">
+    <div class="container">
+      <a href="historia-filosofia.html" class="back-link" id="aulaBack">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Voltar ao curso
+      </a>
+      <span class="diagrams-hero-tag" id="aulaTag">Aula</span>
+      <h1 id="aulaTitle">Carregando...</h1>
+      <p class="diagrams-hero-desc" id="aulaDesc"></p>
+    </div>
+  </header>
+
+  <!-- DIAGRAM NAV (hidden until diagrams exist) -->
+  <nav class="diagram-nav" id="diagramNav" style="display:none">
+    <div class="diagram-nav-inner" id="diagramNavInner"></div>
+  </nav>
+
+  <!-- VIDEO -->
+  <section class="aula-video-section" id="videoSection">
+    <div class="container">
+      <div class="aula-video-wrapper">
+        <div class="aula-video-container">
+          <iframe id="aulaVideo" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIAGRAMS CONTAINER -->
+  <div id="diagramsContainer"></div>
+
+  <!-- COMING SOON (shown when no diagrams) -->
+  <section class="section" id="comingSoon">
+    <div class="container">
+      <div class="aula-coming-soon">
+        <div class="aula-coming-soon-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--color-accent)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        </div>
+        <h3>Esquemas e Diagramas</h3>
+        <p>Os diagramas visuais desta aula estao sendo preparados e serao disponibilizados em breve.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREV/NEXT NAVIGATION -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <div class="aula-nav-links">
+        <a href="#" class="aula-nav-link aula-nav-link--prev" id="aulaPrev" style="visibility: hidden;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          <span>Aula anterior</span>
+        </a>
+        <a href="#" class="aula-nav-link aula-nav-link--next" id="aulaNext" style="visibility: hidden;">
+          <span>Proxima aula</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-icon">&#966;</span>
+            <span class="logo-text">Prof. Henrique Elfes</span>
+          </div>
+          <p class="footer-tagline">Historia da Filosofia</p>
+        </div>
+        <div class="footer-links">
+          <h4 class="footer-heading">Cursos</h4>
+          <a href="curso.html">Pequena Historia das Grandes Ideias</a>
+          <a href="historia-filosofia.html">Historia da Filosofia</a>
+        </div>
+        <div class="footer-links">
+          <h4 class="footer-heading">Links</h4>
+          <a href="index.html">Inicio</a>
+          <a href="videos.html">Videos</a>
+          <a href="duvidas.html">Duvidas</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Prof. Henrique Elfes. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="aulas-data.js"></script>
+  <script src="diagramas-renderer.js"></script>
+  <script>
+    DiagramRenderer.init();
+  </script>
+</body>
+</html>

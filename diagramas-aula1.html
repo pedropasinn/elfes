@@ -1,0 +1,2021 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 1: O que é Filosofia? — Diagramas | Prof. Henrique Elfes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== DIAGRAM PAGE STYLES ===== */
+
+    .diagrams-hero {
+      padding: 140px 0 60px;
+      background: var(--color-bg-dark);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .diagrams-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 30% 50%, rgba(77, 101, 255, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 20%, rgba(201, 168, 76, 0.08) 0%, transparent 50%);
+    }
+
+    .diagrams-hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .diagrams-hero .back-link {
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 32px;
+    }
+
+    .diagrams-hero .back-link:hover {
+      color: var(--color-gold);
+    }
+
+    .diagrams-hero-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--color-gold);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+    }
+
+    .diagrams-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .diagrams-hero h1 em {
+      color: var(--color-gold);
+      font-style: italic;
+    }
+
+    .diagrams-hero-desc {
+      font-size: 17px;
+      color: rgba(255,255,255,0.55);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    /* --- Diagram navigation --- */
+    .diagram-nav {
+      position: sticky;
+      top: 72px;
+      z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--color-border);
+      padding: 0;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .diagram-nav::-webkit-scrollbar { height: 0; }
+
+    .diagram-nav-inner {
+      display: flex;
+      gap: 0;
+      min-width: max-content;
+      padding: 0 24px;
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+
+    .diagram-nav-item {
+      padding: 16px 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--color-text-light);
+      white-space: nowrap;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      display: block;
+    }
+
+    .diagram-nav-item:hover {
+      color: var(--color-accent);
+    }
+
+    .diagram-nav-item.active {
+      color: var(--color-accent);
+      border-bottom-color: var(--color-accent);
+    }
+
+    /* --- Diagram blocks --- */
+    .diagram-section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--color-border);
+      scroll-margin-top: 130px;
+    }
+
+    .diagram-section:nth-child(even) {
+      background: var(--color-bg-alt);
+    }
+
+    .diagram-section:last-child {
+      border-bottom: none;
+    }
+
+    .diagram-header {
+      margin-bottom: 48px;
+    }
+
+    .diagram-number {
+      font-family: var(--font-display);
+      font-size: 64px;
+      font-weight: 700;
+      color: rgba(77, 101, 255, 0.08);
+      line-height: 1;
+      margin-bottom: -8px;
+    }
+
+    .diagram-title {
+      font-family: var(--font-display);
+      font-size: clamp(24px, 3vw, 34px);
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+
+    .diagram-subtitle {
+      font-size: 16px;
+      color: var(--color-text-light);
+      max-width: 600px;
+      line-height: 1.6;
+    }
+
+    /* ==============================
+       BLOCO 1: Cosmologia Panteísta
+       ============================== */
+
+    .cosmo-container {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .cosmo-sphere {
+      flex-shrink: 0;
+      width: 420px;
+      height: 420px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cosmo-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease;
+    }
+
+    .cosmo-ring:hover {
+      transform: scale(1.03);
+    }
+
+    .cosmo-ring-label {
+      position: absolute;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
+
+    .ring-uranus {
+      width: 90px;
+      height: 90px;
+      background: radial-gradient(circle, #c9a84c 0%, #a8872e 100%);
+      border-color: #c9a84c;
+      z-index: 5;
+      box-shadow: 0 0 40px rgba(201, 168, 76, 0.4), 0 0 80px rgba(201, 168, 76, 0.15);
+    }
+
+    .ring-uranus .cosmo-ring-label {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+    }
+
+    .ring-cronos {
+      width: 170px;
+      height: 170px;
+      background: rgba(77, 101, 255, 0.06);
+      border-color: rgba(77, 101, 255, 0.35);
+      z-index: 4;
+    }
+
+    .ring-cronos .cosmo-ring-label {
+      top: -28px;
+      color: var(--color-accent);
+    }
+
+    .ring-deuses {
+      width: 260px;
+      height: 260px;
+      background: rgba(77, 101, 255, 0.03);
+      border-color: rgba(77, 101, 255, 0.2);
+      border-style: dashed;
+      z-index: 3;
+    }
+
+    .ring-deuses .cosmo-ring-label {
+      top: -28px;
+      color: var(--color-accent);
+      opacity: 0.7;
+    }
+
+    .ring-almas {
+      width: 340px;
+      height: 340px;
+      background: rgba(44, 44, 58, 0.03);
+      border-color: rgba(44, 44, 58, 0.15);
+      border-style: dashed;
+      z-index: 2;
+    }
+
+    .ring-almas .cosmo-ring-label {
+      top: -28px;
+      color: var(--color-text-light);
+    }
+
+    .ring-materia {
+      width: 420px;
+      height: 420px;
+      background: rgba(44, 44, 58, 0.02);
+      border-color: rgba(44, 44, 58, 0.12);
+      z-index: 1;
+    }
+
+    .ring-materia .cosmo-ring-label {
+      bottom: -28px;
+      color: var(--color-text-light);
+      opacity: 0.6;
+    }
+
+    .cosmo-legend {
+      flex: 1;
+    }
+
+    .cosmo-legend-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .cosmo-legend-item:last-child {
+      border-bottom: none;
+    }
+
+    .cosmo-legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .cosmo-legend-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 2px;
+    }
+
+    .cosmo-legend-desc {
+      font-size: 14px;
+      color: var(--color-text-light);
+      line-height: 1.5;
+    }
+
+    /* ==============================
+       BLOCO 2: Condição Humana
+       ============================== */
+
+    .condition-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .condition-card {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .condition-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: transparent;
+    }
+
+    .condition-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+    }
+
+    .condition-card:nth-child(1)::before { background: #e53e3e; }
+    .condition-card:nth-child(2)::before { background: var(--color-accent); }
+    .condition-card:nth-child(3)::before { background: var(--color-gold); }
+
+    .condition-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .condition-card:nth-child(1) .condition-icon {
+      background: rgba(229, 62, 62, 0.08);
+    }
+    .condition-card:nth-child(2) .condition-icon {
+      background: rgba(77, 101, 255, 0.08);
+    }
+    .condition-card:nth-child(3) .condition-icon {
+      background: rgba(201, 168, 76, 0.1);
+    }
+
+    .condition-card h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 10px;
+    }
+
+    .condition-card p {
+      font-size: 14px;
+      color: var(--color-text-light);
+      line-height: 1.65;
+    }
+
+    .condition-quote {
+      margin-top: 16px;
+      padding: 12px 16px;
+      background: var(--color-bg-alt);
+      border-radius: var(--radius-sm);
+      border-left: 3px solid var(--color-gold);
+    }
+
+    .condition-quote p {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--color-primary);
+      line-height: 1.5;
+    }
+
+    /* ==============================
+       BLOCO 3: Universo Cíclico
+       ============================== */
+
+    .cycle-visual {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .cycle-diagram {
+      flex-shrink: 0;
+      width: 340px;
+      height: 340px;
+      position: relative;
+    }
+
+    .cycle-orbit {
+      position: absolute;
+      inset: 0;
+      border: 2px dashed rgba(77, 101, 255, 0.2);
+      border-radius: 50%;
+    }
+
+    .cycle-path {
+      position: absolute;
+      inset: 20px;
+      border: 2px solid rgba(201, 168, 76, 0.3);
+      border-radius: 50%;
+    }
+
+    .cycle-node {
+      position: absolute;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .cycle-node:hover {
+      transform: scale(1.12);
+    }
+
+    .cycle-node-icon {
+      font-size: 20px;
+      margin-bottom: 2px;
+    }
+
+    .cycle-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--color-primary) 0%, #2a2a4a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 4px 30px rgba(26, 26, 46, 0.4);
+      z-index: 2;
+    }
+
+    .cycle-center-title {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .cycle-center-sub {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      opacity: 0.5;
+    }
+
+    .node-lua {
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(77, 101, 255, 0.1);
+      color: var(--color-accent);
+      border: 2px solid rgba(77, 101, 255, 0.25);
+    }
+
+    .node-sol {
+      top: 50%;
+      right: -10px;
+      transform: translateY(-50%);
+      background: rgba(201, 168, 76, 0.12);
+      color: #a8872e;
+      border: 2px solid rgba(201, 168, 76, 0.3);
+    }
+
+    .node-estacoes {
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(56, 161, 105, 0.08);
+      color: #38a169;
+      border: 2px solid rgba(56, 161, 105, 0.25);
+    }
+
+    .node-vida {
+      top: 50%;
+      left: -10px;
+      transform: translateY(-50%);
+      background: rgba(229, 62, 62, 0.08);
+      color: #c53030;
+      border: 2px solid rgba(229, 62, 62, 0.2);
+    }
+
+    /* Arrows between nodes */
+    .cycle-arrow {
+      position: absolute;
+      z-index: 1;
+    }
+
+    .cycle-names {
+      flex: 1;
+    }
+
+    .cycle-names-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 20px;
+    }
+
+    .cycle-name-tag {
+      display: inline-block;
+      padding: 8px 18px;
+      margin: 0 8px 10px 0;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 50px;
+      border: 1px solid var(--color-border);
+      color: var(--color-primary);
+      background: var(--color-card);
+      transition: all 0.25s ease;
+    }
+
+    .cycle-name-tag:hover {
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      background: rgba(77, 101, 255, 0.04);
+    }
+
+    .cycle-summary {
+      margin-top: 24px;
+      padding: 20px 24px;
+      background: linear-gradient(135deg, var(--color-primary) 0%, #2a2a4a 100%);
+      border-radius: var(--radius);
+      color: rgba(255,255,255,0.75);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .cycle-summary strong {
+      color: var(--color-gold);
+      font-weight: 700;
+    }
+
+    /* ==============================
+       BLOCO 4: Panteísmo vs Filosofia
+       ============================== */
+
+    .block-grid {
+      display: grid;
+      grid-template-columns: 1fr 80px 1fr;
+      gap: 0;
+      align-items: stretch;
+    }
+
+    .block-panel {
+      padding: 36px;
+      border-radius: var(--radius);
+      border: 1px solid;
+    }
+
+    .block-panel-dark {
+      background: var(--color-primary);
+      border-color: rgba(255,255,255,0.08);
+      color: #fff;
+    }
+
+    .block-panel-light {
+      background: var(--color-card);
+      border-color: var(--color-border);
+    }
+
+    .block-panel h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .block-panel-dark h3 {
+      color: var(--color-gold);
+    }
+
+    .block-panel-light h3 {
+      color: var(--color-accent);
+    }
+
+    .block-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .block-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .block-panel-light .block-list li {
+      border-bottom-color: var(--color-border);
+      color: var(--color-text);
+    }
+
+    .block-panel-dark .block-list li {
+      color: rgba(255,255,255,0.7);
+    }
+
+    .block-list li:last-child {
+      border-bottom: none;
+    }
+
+    .block-list-icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      margin-top: 1px;
+    }
+
+    .icon-block {
+      background: rgba(229, 62, 62, 0.15);
+      color: #fc8181;
+    }
+
+    .icon-check {
+      background: rgba(56, 161, 105, 0.12);
+      color: #38a169;
+    }
+
+    .block-vs {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .block-vs-circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--color-bg-alt);
+      border: 2px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--color-text-light);
+    }
+
+    /* ==============================
+       BLOCO 5: Nascimento da Filosofia
+       ============================== */
+
+    .timeline {
+      position: relative;
+      padding: 20px 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--color-accent), var(--color-gold));
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-item:nth-child(odd) {
+      flex-direction: row;
+    }
+
+    .timeline-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .timeline-content {
+      width: calc(50% - 40px);
+      padding: 28px;
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      transition: all 0.3s ease;
+    }
+
+    .timeline-content:hover {
+      box-shadow: var(--shadow);
+      border-color: rgba(77, 101, 255, 0.2);
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--color-accent);
+      border: 3px solid var(--color-bg);
+      z-index: 2;
+      box-shadow: 0 0 0 4px rgba(77, 101, 255, 0.15);
+    }
+
+    .timeline-item:last-child .timeline-dot {
+      background: var(--color-gold);
+      box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.2);
+    }
+
+    .timeline-tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-accent);
+      margin-bottom: 6px;
+    }
+
+    .timeline-content h4 {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+
+    .timeline-content p {
+      font-size: 14px;
+      color: var(--color-text-light);
+      line-height: 1.6;
+    }
+
+    /* ==============================
+       BLOCO 6: Filosofia vs Ciência
+       ============================== */
+
+    .compare-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+      background: var(--color-card);
+    }
+
+    .compare-table thead th {
+      padding: 20px 28px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: left;
+      border-bottom: 2px solid var(--color-border);
+    }
+
+    .compare-table thead th:first-child {
+      background: var(--color-bg-alt);
+      color: var(--color-text-light);
+      width: 180px;
+    }
+
+    .compare-table thead th:nth-child(2) {
+      background: rgba(77, 101, 255, 0.06);
+      color: var(--color-accent);
+    }
+
+    .compare-table thead th:nth-child(3) {
+      background: rgba(201, 168, 76, 0.06);
+      color: #a8872e;
+    }
+
+    .compare-table tbody td {
+      padding: 18px 28px;
+      font-size: 14px;
+      line-height: 1.55;
+      border-bottom: 1px solid var(--color-border);
+      vertical-align: top;
+    }
+
+    .compare-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .compare-table tbody td:first-child {
+      font-weight: 700;
+      color: var(--color-primary);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: var(--color-bg-alt);
+    }
+
+    .compare-table tbody td:nth-child(2) {
+      color: var(--color-text);
+    }
+
+    .compare-table tbody td:nth-child(3) {
+      color: var(--color-text);
+    }
+
+    .compare-highlight {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .highlight-blue {
+      background: rgba(77, 101, 255, 0.08);
+      color: var(--color-accent);
+    }
+
+    .highlight-gold {
+      background: rgba(201, 168, 76, 0.1);
+      color: #a8872e;
+    }
+
+    /* Four Causes */
+    .causes-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+
+    .cause-card {
+      padding: 24px 20px;
+      border-radius: var(--radius);
+      text-align: center;
+      border: 1px solid var(--color-border);
+      background: var(--color-card);
+      transition: all 0.3s ease;
+    }
+
+    .cause-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow);
+    }
+
+    .cause-number {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      color: rgba(77, 101, 255, 0.15);
+      margin-bottom: 8px;
+    }
+
+    .cause-name {
+      font-family: var(--font-display);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 4px;
+    }
+
+    .cause-question {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-accent);
+      margin-bottom: 8px;
+    }
+
+    .cause-desc {
+      font-size: 13px;
+      color: var(--color-text-light);
+      line-height: 1.5;
+    }
+
+    .cause-owner {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 50px;
+    }
+
+    .owner-phil {
+      background: rgba(77, 101, 255, 0.08);
+      color: var(--color-accent);
+    }
+
+    .owner-sci {
+      background: rgba(201, 168, 76, 0.1);
+      color: #a8872e;
+    }
+
+    .owner-both {
+      background: rgba(56, 161, 105, 0.08);
+      color: #38a169;
+    }
+
+    /* ==============================
+       BLOCO 7: Operações da Razão
+       ============================== */
+
+    .reason-flow {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      position: relative;
+    }
+
+    .reason-step {
+      flex: 1;
+      padding: 36px 28px;
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .reason-step:first-child {
+      border-radius: var(--radius) 0 0 var(--radius);
+    }
+
+    .reason-step:last-child {
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    .reason-step:hover {
+      z-index: 2;
+      box-shadow: var(--shadow-lg);
+      border-color: var(--color-accent);
+    }
+
+    .reason-step-num {
+      font-family: var(--font-display);
+      font-size: 48px;
+      font-weight: 700;
+      color: rgba(77, 101, 255, 0.1);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .reason-step h4 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 4px;
+    }
+
+    .reason-step-latin {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 14px;
+      color: var(--color-gold);
+      margin-bottom: 14px;
+    }
+
+    .reason-step p {
+      font-size: 14px;
+      color: var(--color-text-light);
+      line-height: 1.6;
+    }
+
+    .reason-step-example {
+      margin-top: 16px;
+      padding: 14px 16px;
+      background: var(--color-bg-alt);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: var(--color-text);
+      line-height: 1.5;
+      border-left: 3px solid var(--color-accent);
+    }
+
+    .reason-step-example strong {
+      color: var(--color-primary);
+    }
+
+    .reason-arrow {
+      position: absolute;
+      right: -14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 28px;
+      background: var(--color-accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+      box-shadow: 0 2px 8px rgba(77, 101, 255, 0.3);
+    }
+
+    .reason-step:last-child .reason-arrow {
+      display: none;
+    }
+
+    .reason-note {
+      margin-top: 32px;
+      padding: 24px 28px;
+      background: linear-gradient(135deg, var(--color-primary) 0%, #2a2a4a 100%);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .reason-note-icon {
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(201, 168, 76, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .reason-note-text {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.65;
+    }
+
+    .reason-note-text strong {
+      color: var(--color-gold);
+    }
+
+    /* ==============================
+       BLOCO 8: Finalidade
+       ============================== */
+
+    .purpose-visual {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .purpose-top {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      width: 100%;
+      max-width: 700px;
+    }
+
+    .purpose-desire {
+      flex: 1;
+      padding: 32px 24px;
+      text-align: center;
+      border-radius: var(--radius);
+      border: 2px solid;
+      transition: all 0.3s ease;
+    }
+
+    .purpose-desire:hover {
+      transform: translateY(-4px);
+    }
+
+    .purpose-desire:nth-child(1) {
+      border-color: rgba(77, 101, 255, 0.25);
+      background: rgba(77, 101, 255, 0.03);
+    }
+
+    .purpose-desire:nth-child(2) {
+      border-color: rgba(229, 62, 62, 0.2);
+      background: rgba(229, 62, 62, 0.02);
+    }
+
+    .purpose-desire-icon {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .purpose-desire h4 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 6px;
+    }
+
+    .purpose-desire p {
+      font-size: 14px;
+      color: var(--color-text-light);
+      line-height: 1.5;
+    }
+
+    .purpose-converge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--color-text-light);
+    }
+
+    .purpose-converge svg {
+      opacity: 0.4;
+    }
+
+    .purpose-converge-label {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-text-light);
+    }
+
+    .purpose-result {
+      width: 100%;
+      max-width: 560px;
+      padding: 40px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--color-primary) 0%, #2a2a4a 100%);
+      border-radius: var(--radius);
+      box-shadow: 0 12px 48px rgba(26, 26, 46, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .purpose-result::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(201, 168, 76, 0.15) 0%, transparent 60%);
+    }
+
+    .purpose-result-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .purpose-result-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--color-gold);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      padding: 5px 14px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+
+    .purpose-result h3 {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .purpose-result p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.65;
+      max-width: 420px;
+      margin: 0 auto 20px;
+    }
+
+    .purpose-triad {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .purpose-triad-item {
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.7);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 991px) {
+      .cosmo-container {
+        flex-direction: column;
+      }
+
+      .cosmo-sphere {
+        width: 320px;
+        height: 320px;
+      }
+
+      .ring-uranus { width: 70px; height: 70px; }
+      .ring-cronos { width: 130px; height: 130px; }
+      .ring-deuses { width: 200px; height: 200px; }
+      .ring-almas { width: 260px; height: 260px; }
+      .ring-materia { width: 320px; height: 320px; }
+
+      .cycle-visual {
+        flex-direction: column;
+      }
+
+      .cycle-diagram {
+        width: 280px;
+        height: 280px;
+        margin: 0 auto;
+      }
+
+      .block-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+
+      .block-vs {
+        order: -1;
+      }
+
+      .block-vs-circle {
+        width: 40px;
+        height: 40px;
+        font-size: 12px;
+      }
+
+      .timeline::before { left: 20px; }
+      .timeline-dot { left: 20px; }
+
+      .timeline-item,
+      .timeline-item:nth-child(even) {
+        flex-direction: row;
+        padding-left: 52px;
+      }
+
+      .timeline-content {
+        width: 100%;
+      }
+
+      .causes-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .reason-flow {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .reason-step {
+        border-radius: var(--radius) !important;
+      }
+
+      .reason-arrow {
+        right: auto;
+        bottom: -14px;
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .reason-arrow svg {
+        transform: rotate(90deg);
+      }
+
+      .purpose-top {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .condition-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .compare-table {
+        display: block;
+        overflow-x: auto;
+      }
+
+      .causes-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .diagram-section {
+        padding: 56px 0;
+      }
+
+      .cosmo-sphere {
+        width: 260px;
+        height: 260px;
+      }
+
+      .ring-uranus { width: 56px; height: 56px; }
+      .ring-cronos { width: 110px; height: 110px; }
+      .ring-deuses { width: 165px; height: 165px; }
+      .ring-almas { width: 215px; height: 215px; }
+      .ring-materia { width: 260px; height: 260px; }
+
+      .ring-uranus .cosmo-ring-label { font-size: 10px; }
+      .cosmo-ring-label { font-size: 9px; }
+
+      .purpose-triad {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="imagens/logo.png" alt="HE" class="nav-logo-img">
+        <span class="logo-text">Prof. Henrique Elfes</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#cursos">Cursos</a></li>
+        <li><a href="index.html#videos">Videos</a></li>
+        <li><a href="index.html#comunidade">Comunidade</a></li>
+        <li><a href="duvidas.html" class="btn btn-nav">Duvidas</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="diagrams-hero">
+    <div class="container">
+      <a href="historia-filosofia.html" class="back-link">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        Voltar ao curso
+      </a>
+      <span class="diagrams-hero-tag">Aula 1 &mdash; Diagramas</span>
+      <h1>O que e <em>Filosofia?</em></h1>
+      <p class="diagrams-hero-desc">Esquemas visuais das principais ideias apresentadas na primeira aula do curso de Historia da Filosofia, pelo Prof. Henrique Elfes.</p>
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="diagram-nav" id="diagramNav">
+    <div class="diagram-nav-inner">
+      <a href="#videoaula" class="diagram-nav-item active">Videoaula</a>
+      <a href="#bloco1" class="diagram-nav-item">Cosmologia</a>
+      <a href="#bloco2" class="diagram-nav-item">Condicao Humana</a>
+      <a href="#bloco3" class="diagram-nav-item">Ciclos</a>
+      <a href="#bloco4" class="diagram-nav-item">Panteismo</a>
+      <a href="#bloco5" class="diagram-nav-item">Nascimento</a>
+      <a href="#bloco6" class="diagram-nav-item">Filosofia vs Ciencia</a>
+      <a href="#bloco7" class="diagram-nav-item">Razao</a>
+      <a href="#bloco8" class="diagram-nav-item">Finalidade</a>
+    </div>
+  </nav>
+
+  <!-- ===== VIDEO DA AULA ===== -->
+  <section class="diagram-section" id="videoaula" style="background: var(--color-bg-dark); border-bottom: none;">
+    <div class="container">
+      <div class="diagram-header reveal">
+        <div class="diagram-number" style="color: rgba(201,168,76,0.15);">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" style="color: var(--color-gold); opacity: 0.3;"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <h2 class="diagram-title" style="color: #fff;">Videoaula</h2>
+        <p class="diagram-subtitle" style="color: rgba(255,255,255,0.5);">Assista a aula completa do Prof. Henrique Elfes antes de explorar os diagramas.</p>
+      </div>
+      <div class="reveal" style="max-width: 800px; margin: 0 auto;">
+        <div class="peek-video-container" style="border-radius: var(--radius); overflow: hidden; box-shadow: 0 12px 48px rgba(0,0,0,0.4);">
+          <iframe src="https://www.youtube.com/embed/VDmL97qcNsg?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOCO 1: Cosmologia Panteista ===== -->
+  <section class="diagram-section" id="bloco1">
+    <div class="container">
+      <div class="diagram-header reveal">
+        <div class="diagram-number">01</div>
+        <h2 class="diagram-title">A Cosmologia Panteista</h2>
+        <p class="diagram-subtitle">O universo como camadas de cebola: da divindade central ate a materia.</p>
+      </div>
+
+      <div class="cosmo-container reveal">
+        <div class="cosmo-sphere">
+          <div class="cosmo-ring ring-materia">
+            <span class="cosmo-ring-label">Materia (casca externa)</span>
+          </div>
+          <div class="cosmo-ring ring-almas">
+            <span class="cosmo-ring-label">Almas Inferiores</span>
+          </div>
+          <div class="cosmo-ring ring-deuses">
+            <span class="cosmo-ring-label">Zeus, Poseidon, Hades...</span>
+          </div>
+          <div class="cosmo-ring ring-cronos">
+            <span class="cosmo-ring-label">Cronos (Tempo)</span>
+          </div>
+          <div class="cosmo-ring ring-uranus">
+            <span class="cosmo-ring-label">Uranus</span>
+          </div>
+        </div>
+
+        <div class="cosmo-legend">
+          <div class="cosmo-legend-item">
+            <div class="cosmo-legend-dot" style="background: #c9a84c; box-shadow: 0 0 8px rgba(201,168,76,0.4);"></div>
+            <div>
+              <div class="cosmo-legend-title">Uranus &mdash; A Divindade Central</div>
+              <div class="cosmo-legend-desc">O Deus Altissimo, os Ceus. Fonte de toda emanacao. Gera tudo por processo necessario e mecanico.</div>
+            </div>
+          </div>
+          <div class="cosmo-legend-item">
+            <div class="cosmo-legend-dot" style="background: var(--color-accent);"></div>
+            <div>
+              <div class="cosmo-legend-title">Cronos &mdash; O Tempo</div>
+              <div class="cosmo-legend-desc">Primeira emanacao. Devora seus proprios filhos ate ser destronado pela triade: Zeus, Poseidon e Hades.</div>
+            </div>
+          </div>
+          <div class="cosmo-legend-item">
+            <div class="cosmo-legend-dot" style="background: rgba(77,101,255,0.4);"></div>
+            <div>
+              <div class="cosmo-legend-title">Deuses &mdash; Emanacoes Sucessivas</div>
+              <div class="cosmo-legend-desc">Cada deus gera novos deuses por emanacao. Processo que se repete "n vezes, a gosto do fregues".</div>
+            </div>
+          </div>
+          <div class="cosmo-legend-item">
+            <div class="cosmo-legend-dot" style="background: var(--color-text-light);"></div>
+            <div>
+              <div class="cosmo-legend-title">Almas Inferiores &mdash; Nos</div>
+              <div class="cosmo-legend-desc">As almas se rebelaram e foram desterradas para a casca externa. Somos "ondas passageiras no mar da divindade".</div>
+            </div>
+          </div>
+          <div class="cosmo-legend-item">
+            <div class="cosmo-legend-dot" style="background: var(--color-border);"></div>
+            <div>
+              <div class="cosmo-legend-title">Materia &mdash; A Prisao</div>
+              <div class="cosmo-legend-desc">Principio de limitacao e individuacao. "O Carandiru das almas." O ideal e purificar-se e retornar ao mundo espiritual.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOCO 2: Condicao Humana ===== -->
+  <section class="diagram-section" id="bloco2">
+    <div class="container">
+      <div class="diagram-header reveal">
+        <div class="diagram-number">02</div>
+        <h2 class="diagram-title">A Condicao Humana no Panteismo</h2>
+        <p class="diagram-subtitle">Rebeliao, desterro e a busca pela purificacao.</p>
+      </div>
+
+      <div class="condition-grid reveal">
+        <div class="condition-card">
+          <div class="condition-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e53e3e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3>A Rebeliao</h3>
+          <p>As almas inferiores, de algum modo nao descrito, se rebelam contra o Deus Altissimo e sao desterradas para a casca externa &mdash; o mundo material.</p>
+        </div>
+
+        <div class="condition-card">
+          <div class="condition-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4d65ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+          </div>
+          <h3>A Prisao Material</h3>
+          <p>A materia e principio de limitacao: nao podemos voar, teletransportar, comer ambrosia. O corpo limita a alma.</p>
+          <div class="condition-quote">
+            <p>"A materia e o Carandiru das almas."</p>
+          </div>
+        </div>
+
+        <div class="condition-card">
+          <div class="condition-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>A Purificacao</h3>
+          <p>O ideal e que a alma aproveite o estado de decadencia para se purificar e retornar ao mundo espiritual. Se nao conseguir, renasce em novo ciclo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOCO 3: Universo Ciclico ===== -->
+  <section class="diagram-section" id="bloco3">
+    <div class="container">
+      <div class="diagram-header reveal">
+        <div class="diagram-number">03</div>
+        <h2 class="diagram-title">O Universo Ciclico e o Destino</h2>
+        <p class="diagram-subtitle">Tudo se move em ciclos &mdash; dos astros a alma humana.</p>
+      </div>
+
+      <div class="cycle-visual reveal">
+        <div class="cycle-diagram">
+          <div class="cycle-orbit"></div>
+          <div class="cycle-path"></div>
+          <div class="cycle-center">
+            <span class="cycle-center-title">Ciclos</span>
+            <span class="cycle-center-sub">Universais</span>
+          </div>
+          <div class="cycle-node node-lua">
+            <span class="cycle-node-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            </span>
+            <span>Lua</span>
+          </div>
+          <div class="cycle-node node-sol">
+            <span class="cycle-node-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+            </span>
+            <span>Sol</span>
+          </div>
+          <div class="cycle-node node-estacoes">
+            <span class="cycle-node-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L2 21l.73-2.64C4.24 14.15 7 9 17 8z"/><path d="M17 8c4 0 6 2 6 6"/></svg>
+            </span>
+            <span>Estacoes</span>
+          </div>
+          <div class="cycle-node node-vida">
+            <span class="cycle-node-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </span>
+            <span>Vida</span>
+          </div>
+        </div>
+
+        <div class="cycle-names">
+          <h3 class="cycle-names-title">Nomes para a mesma realidade</h3>
+          <div>
+            <span class="cycle-name-tag">Logos</span>
+            <span class="cycle-name-tag">Lei Eterna</span>
+            <span class="cycle-name-tag">Ananke (Destino)</span>
+            <span class="cycle-name-tag">Karma</span>
+            <span class="cycle-name-tag">Horoscopo</span>
+            <span class="cycle-name-tag">Lei Universal</span>
+          </div>
+          <div class="cycle-summary">
+            <strong>A energia que move o universo</strong> pode ser de tres tipos: <strong>amor</strong> (positivo atrai positivo), <strong>odio</strong> (negativo repele), ou <strong>alternancia entre ambos</strong> &mdash; a dialetica. Platao usa isso como argumentacao; Hegel a erige em lei geral.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOCO 4: Panteismo nao permite Filosofia ===== -->
+  <section class="diagram-section" id="bloco4">
+    <div class="container">
+      <div class="diagram-header reveal">
+        <div class="diagram-number">04</div>
+        <h2 class="diagram-title">Por que o Panteismo Nao Permite Filosofia</h2>
+        <p class="diagram-subtitle">Imaginacao poetica versus razao logica.</p>
+      </div>
+
+      <div class="block-grid reveal">
+        <div class="block-panel block-panel-dark">
+          <h3>Panteismo</h3>
+          <ul class="block-list">
+            <li>
+              <span class="block-list-icon icon-block">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </span>
+              <span><strong>Tudo e tudo</strong> &mdash; nao ha principio de identidade nem de nao-contradicao</span>
+            </li>
+            <li>
+              <span class="block-list-icon icon-block">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </span>
+              <span>Baseado em <strong>imaginacao poetica</strong> e fantasia, nao em razao</span>
+            </li>
+            <li>
+              <span class="block-list-icon icon-block">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </span>
+              <span>Sem autoridade dogmatica &mdash; <strong>vale tudo</strong>, cada um escolhe o que venerar</span>
+            </li>
+            <li>
+              <span class="block-list-icon icon-block">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </span>
+              <span>Deus e bom e mau, belo e feio &mdash; <strong>relativismo necessario</strong></span>
+            </li>
+            <li>
+              <span class="block-list-icon icon-block">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              </span>
+              <span>Sentimento predominante: <strong>medo</strong> perante forcas cosmicas</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="block-vs">
+          <div class="block-vs-circle">vs</div>
+        </div>
+
+        <div class="block-panel block-panel-light">
+          <h3>Filosofia</h3>
+          <ul class="block-list">
+            <li>
+              <span class="block-list-icon icon-check">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span><strong>Principio da nao-contradicao</strong> &mdash; A nao e nao-A</span>
+            </li>
+            <li>
+              <span class="block-list-icon icon-check">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Baseada em <strong>razao</strong>, logica e argumentacao</span>
+            </li>
+            <li>
+              <span class="block-list-icon icon-check">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Busca <strong>compreender</strong> racionalmente a estrutura do mundo</span>
+            </li>
+            <li>
+              <span class="block-list-icon icon-check">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Deus nao e o mundo. <strong>Coisas sao distintas</strong></span>
+            </li>
+            <li>
+              <span class="block-list-icon icon-check">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </span>
+              <span>Caminha para o <strong>monoteismo</strong> (Socrates, Platao, Aristoteles)</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOCO 5: Nascimento da Filosofia ===== -->
+  <section class="diagram-section" id="bloco5">
+    <div class="container">
+      <div class="diagram-header reveal">
+        <div class="diagram-number">05</div>
+        <h2 class="diagram-title">O Nascimento da Filosofia</h2>
+        <p class="diagram-subtitle">De Homero a Aristoteles: o caminho ate a razao.</p>
+      </div>
+
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-tag">Precursor</div>
+            <h4>Homero</h4>
+            <p>Antropomorfiza os deuses gregos &mdash; paixoes, traicoes, jogos de poder. Educador da Grecia. Torna o panteao compreensivel, abrindo caminho para a razao.</p>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-tag">Pre-Socraticos</div>
+            <h4>A Busca da Substancia</h4>
+            <p>Tentam entender racionalmente a substancia basica do mundo. A diferenca: nao por inspiracao poetica, mas por investigacao racional.</p>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-tag">Ruptura</div>
+            <h4>Parmenides</h4>
+            <p>Descobre o principio da nao-contradicao. Ao aplica-lo ao panteismo, desmonta todo o sistema: "Deus nao e o mundo. Laranjas sao laranjas. Queijo e queijo."</p>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-tag" style="color: var(--color-gold);">A Grande Triade</div>
+            <h4>Socrates, Platao, Aristoteles</h4>
+            <p>Consolidam a ruptura com o panteismo. Chegam a algo muito mais proximo do monoteismo judaico-cristao. Fundamentam a filosofia como busca racional.</p>
+          </div>
+          <div class="timeline-dot"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOCO 6: Filosofia vs Ciencia ===== -->
+  <section class="diagram-section" id="bloco6">
+    <div class="container">
+      <div class="diagram-header reveal">
+        <div class="diagram-number">06</div>
+        <h2 class="diagram-title">Filosofia vs Ciencia</h2>
+        <p class="diagram-subtitle">As quatro causas de Aristoteles e o limite entre filosofia e ciencia.</p>
+      </div>
+
+      <table class="compare-table reveal">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Filosofia</th>
+            <th>Ciencia</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pergunta central</td>
+            <td><strong>O que e?</strong> e <strong>Por que existe?</strong></td>
+            <td><strong>Como funciona?</strong></td>
+          </tr>
+          <tr>
+            <td>Metodo</td>
+            <td>Razao, logica, argumentacao</td>
+            <td>Observacao + matematizacao (Newton)</td>
+          </tr>
+          <tr>
+            <td>Matematizavel?</td>
+            <td><span class="compare-highlight highlight-blue">Nao</span></td>
+            <td><span class="compare-highlight highlight-gold">Sim</span></td>
+          </tr>
+          <tr>
+            <td>Objeto</td>
+            <td>Deus, o homem e o mundo (o que sao)</td>
+            <td>Fenomenos naturais (como operam)</td>
+          </tr>
+          <tr>
+            <td>Exemplo</td>
+            <td>"Por que a gravidade existe?"</td>
+            <td>"Como a gravidade funciona?" (F = ma)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="causes-grid reveal">
+        <div class="cause-card">
+          <div class="cause-number">I</div>
+          <div class="cause-name">Causa Formal</div>
+          <div class="cause-question">"O que e?"</div>
+          <div class="cause-desc">A essencia, a definicao da coisa</div>
+          <span class="cause-owner owner-phil">Filosofia</span>
+        </div>
+        <div class="cause-card">
+          <div class="cause-number">II</div>
+          <div class="cause-name">Causa Material</div>
+          <div class="cause-question">"De que e feito?"</div>
+          <div class="cause-desc">A materia, o substrato</div>
+          <span class="cause-owner owner-both">Ambas</span>
+        </div>
+        <div class="cause-card">
+          <div class="cause-number">III</div>
+          <div class="cause-name">Causa Eficiente</div>
+          <div class="cause-question">"Por que / como?"</div>
+          <div class="cause-desc">A origem, o mecanismo</div>
+          <span class="cause-owner owner-sci">Ciencia</span>
+        </div>
+        <div class="cause-card">
+          <div class="cause-number">IV</div>
+          <div class="cause-name">Causa Final</div>
+          <div class="cause-question">"Para que serve?"</div>
+          <div class="cause-desc">O proposito, a finalidade</div>
+          <span class="cause-owner owner-phil">Filosofia</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOCO 7: Operacoes da Razao ===== -->
+  <section class="diagram-section" id="bloco7">
+    <div class="container">
+      <div class="diagram-header reveal">
+        <div class="diagram-number">07</div>
+        <h2 class="diagram-title">As Tres Operacoes da Razao</h2>
+        <p class="diagram-subtitle">Abstracao, juizo e silogismo: os instrumentos do pensamento filosofico.</p>
+      </div>
+
+      <div class="reason-flow reveal">
+        <div class="reason-step">
+          <div class="reason-step-num">1</div>
+          <h4>Abstracao</h4>
+          <div class="reason-step-latin">Conceito</div>
+          <p>A razao responde: <strong>"o que e isto?"</strong> Extrai a essencia da coisa observada.</p>
+          <div class="reason-step-example">
+            <strong>Exemplo:</strong> Olho para o objeto e abstraio: "isto e um copo de agua."
+          </div>
+          <div class="reason-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <div class="reason-step">
+          <div class="reason-step-num">2</div>
+          <h4>Juizo</h4>
+          <div class="reason-step-latin">Verdadeiro ou Falso</div>
+          <p>Conexao entre dois conceitos. Pode ser <strong>verdadeiro ou falso</strong> &mdash; exige retorno ao real para verificacao.</p>
+          <div class="reason-step-example">
+            <strong>Exemplo:</strong> "O PP e verde-oliva" &mdash; olho para ele e verifico: falso.
+          </div>
+          <div class="reason-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+
+        <div class="reason-step">
+          <div class="reason-step-num">3</div>
+          <h4>Silogismo</h4>
+          <div class="reason-step-latin">Do conhecido ao desconhecido</div>
+          <p>Conclusao logica a partir de premissas verificadas. Ferramenta central da deducao filosofica.</p>
+          <div class="reason-step-example">
+            <strong>Exemplo:</strong> "Todos os homens sao mortais. O PP e homem. Logo, o PP e mortal."
+          </div>
+          <div class="reason-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="reason-note reveal">
+        <div class="reason-note-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        </div>
+        <div class="reason-note-text">
+          <strong>Atencao com as inducoes:</strong> "Todos os homens sao mortais" parte da observacao &mdash; mas ninguem observou todos os seres humanos de todos os tempos. Ha sempre um grau de incerteza. A <strong>historia da filosofia</strong> ajuda a corrigir isso: comparando e conectando teorias, aumenta-se a coerencia do conhecimento.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BLOCO 8: Finalidade da Filosofia ===== -->
+  <section class="diagram-section" id="bloco8">
+    <div class="container">
+      <div class="diagram-header reveal">
+        <div class="diagram-number">08</div>
+        <h2 class="diagram-title">A Finalidade da Filosofia</h2>
+        <p class="diagram-subtitle">Segundo Aristoteles: conhecer para poder amar.</p>
+      </div>
+
+      <div class="purpose-visual reveal">
+        <div class="purpose-top">
+          <div class="purpose-desire">
+            <div class="purpose-desire-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#4d65ff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+            </div>
+            <h4>Verdade</h4>
+            <p>Todo ser humano deseja conhecer a verdade &mdash; eterna, estavel, que nao mude a toda hora.</p>
+          </div>
+          <div class="purpose-desire">
+            <div class="purpose-desire-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#e53e3e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h4>Amor</h4>
+            <p>Todo ser humano deseja amar. A verdade e condicao do amor autentico &mdash; so se ama o que se conhece.</p>
+          </div>
+        </div>
+
+        <div class="purpose-converge">
+          <svg width="24" height="40" viewBox="0 0 24 40" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 0 L12 20 L20 0" stroke-dasharray="4 3" opacity="0.3"/>
+            <path d="M12 20 L12 40"/>
+            <path d="M8 34 L12 40 L16 34"/>
+          </svg>
+          <span class="purpose-converge-label">Convergem em</span>
+        </div>
+
+        <div class="purpose-result">
+          <div class="purpose-result-content">
+            <span class="purpose-result-tag">Aristoteles</span>
+            <h3>Contemplacao</h3>
+            <p>Um conhecimento amoroso da realidade. Conhecer Deus, o homem e o mundo de modo a poder ama-los.</p>
+            <div class="purpose-triad">
+              <span class="purpose-triad-item">Deus</span>
+              <span class="purpose-triad-item">Homem</span>
+              <span class="purpose-triad-item">Mundo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-icon">&#966;</span>
+            <span class="logo-text">Prof. Henrique Elfes</span>
+          </div>
+          <p class="footer-tagline">Filosofia, Arte e as Grandes Ideias</p>
+        </div>
+        <div class="footer-links">
+          <h4 class="footer-heading">Cursos</h4>
+          <a href="curso.html">Pequena Historia das Grandes Ideias</a>
+          <a href="historia-filosofia.html">Historia da Filosofia</a>
+        </div>
+        <div class="footer-links">
+          <h4 class="footer-heading">Links</h4>
+          <a href="index.html">Inicio</a>
+          <a href="videos.html">Videos</a>
+          <a href="duvidas.html">Duvidas</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Prof. Henrique Elfes. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // --- Scroll reveal ---
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    reveals.forEach(el => revealObserver.observe(el));
+
+    // --- Active nav on scroll ---
+    const navItems = document.querySelectorAll('.diagram-nav-item');
+    const sections = document.querySelectorAll('.diagram-section');
+
+    const navObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          navItems.forEach(item => {
+            item.classList.toggle('active', item.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+
+    sections.forEach(s => navObserver.observe(s));
+
+    // --- Smooth scroll nav ---
+    navItems.forEach(item => {
+      item.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(item.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>

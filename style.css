@@ -641,6 +641,14 @@ button {
   color: #b8923a;
 }
 
+.lesson-link-diagrama {
+  color: #38a169;
+}
+
+.lesson-link-diagrama:hover {
+  color: #2f855a;
+}
+
 /* --- HERO WITH IMAGE --- */
 .hero-image {
   position: relative;
