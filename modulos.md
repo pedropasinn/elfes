@@ -1,12 +1,12 @@
 Links importantes:
 Instagram:
- Henrique Elfes (@henrique.elfes) • Instagram
+ [Henrique Elfes (@henrique.elfes) • Instagram](https://www.instagram.com/henrique.elfes/)
 Canal do Youtube: 
-Prof. Henrique Elfes - YouTube
+[Prof. Henrique Elfes - YouTube](https://www.youtube.com/channel/UCkEqmUvgwUVwv98TrLrwAaA)
 Grupo de Whatsapp para aulas ao vivo de tira-dúvidas: 
-Comunidade no Whatsapp
-Formulário para registrar dúvidas: 
-https://forms.gle/UuPKWP5bdd6e1RHp6 
+[Comunidade no Whatsapp](https://chat.whatsapp.com/IrNP0bLV4xx37dJFRk97vf)
+
+# Modulo 1
 Aula 01 - O Sagrado
 Link da aula: [O Sagrado: o centro da religião | ideias pré-filosóficas - Módulo 1 | Aula 1](https://youtu.be/UxXt7lFk-IQ)
 PDF dos slides e material complementar: [Slides_Modulo 1_Aula 1_O Sagrado.pdf](https://drive.google.com/file/d/1CF9IXIpfnKZq03k_RJtLFO7mzp_7BEOm/view?usp=drive_link)
@@ -64,3 +64,27 @@ https://drive.google.com/file/d/1UF_FJpLxuxmtzRkFn1rYkbWEa2LNlhF7/view?usp=drive
 
 https://youtu.be/rFztfDXuuek
 https://drive.google.com/file/d/1GNqov_uyBmO-SzV39HZzmrxWyicNDyBY/view?usp=drive_link
+
+
+# acessos
+
+  Backend criado
+
+  - POST /api/duvidas - salva respostas dos alunos
+  - GET /api/duvidas?senha=elfes2025 - lista todas as
+  respostas (admin)
+  - GET /api/duvidas?senha=elfes2025&format=csv - exporta
+  como CSV
+
+  Páginas
+
+  - /duvidas.html - formulário com todas as 17 aulas dos 3
+   módulos
+  - /admin.html - painel admin com cards, busca,
+  estatísticas e export CSV
+  - Senha padrão do admin: elfes2025 (pode mudar via env
+  var ADMIN_PASSWORD)
+
+  Para rodar local
+
+  npm run dev
