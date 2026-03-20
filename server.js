@@ -15,7 +15,7 @@ if (!fs.existsSync(DB_PATH)) {
 }
 
 app.use(express.json());
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // POST - Save a new dúvida
 app.post('/api/duvidas', (req, res) => {

@@ -10,8 +10,8 @@ import json
 import sys
 
 PLAYLIST_URL = "https://www.youtube.com/playlist?list=PL9ymgSAPJFid17GxrePYsJz31DU7bHPEr"
-AUDIO_DIR = os.path.join(os.path.dirname(__file__), "transcricoes", "audios")
-TEXT_DIR = os.path.join(os.path.dirname(__file__), "transcricoes", "textos")
+AUDIO_DIR = os.path.join(os.path.dirname(__file__), "..", "Cursos", "HF", "transcricoes", "audios")
+TEXT_DIR = os.path.join(os.path.dirname(__file__), "..", "Cursos", "HF", "transcricoes", "textos")
 
 os.makedirs(AUDIO_DIR, exist_ok=True)
 os.makedirs(TEXT_DIR, exist_ok=True)

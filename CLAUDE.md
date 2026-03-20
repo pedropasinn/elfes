@@ -16,10 +16,11 @@ No build step, no tests, no linter. The site is plain HTML/CSS/JS served statica
 
 ## Architecture
 
-- **Frontend**: Static HTML pages (`index.html`, `curso.html`, `videos.html`, `duvidas.html`, `admin.html`) + single `style.css` + single `script.js`. No framework, no bundler.
-- **Backend (local)**: `server.js` — Express server that serves static files and handles the `/api/duvidas` endpoint. Stores data in `db/duvidas.json`.
+- **Frontend**: Static files in `public/` — HTML pages, `css/style.css`, `js/script.js`. No framework, no bundler.
+- **Backend (local)**: `server.js` — Express server that serves `public/` as static root and handles the `/api/duvidas` endpoint. Stores data in `db/duvidas.json`.
 - **Backend (Vercel)**: `api/duvidas.js` — Vercel serverless function, same logic as server.js but uses `/tmp/duvidas.json` (ephemeral storage). Configured via `vercel.json`.
-- **Transcription tool**: `transcrever.py` — standalone Python script that downloads audio from a YouTube playlist via `yt-dlp` and transcribes with OpenAI Whisper. Outputs to `transcricoes/`.
+- **Transcription tool**: `tools/transcrever.py` — standalone Python script that downloads audio from a YouTube playlist via `yt-dlp` and transcribes with OpenAI Whisper. Outputs to `Cursos/HF/transcricoes/`.
+- **Course content**: `Cursos/` — organized by course: PHGI, HF, GR, TRV.
 
 ## API Endpoints
 
@@ -31,4 +32,4 @@ Admin password defaults to env var `ADMIN_PASSWORD`, fallback `elfes2025`.
 
 ## Content Data
 
-`modulos.md` contains all YouTube video links and Google Drive PDF links for the 3 course modules. This is the source of truth for lesson URLs used across the site.
+`Cursos/PHGI/modulos.md` contains all YouTube video links and Google Drive PDF links for the 3 course modules. This is the source of truth for lesson URLs used across the site.
