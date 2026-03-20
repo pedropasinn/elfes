@@ -1,47 +1,25 @@
 #!/usr/bin/env python3
 """
-Script para baixar áudios de uma playlist do YouTube e transcrever com Whisper.
+Script para transcrever áudios já baixados do curso História da Filosofia (HF).
+Os áudios já estão em Cursos/HF/transcricoes/audios/.
+Apenas executa a transcrição com Whisper.
 """
 
-import subprocess
 import os
 import glob
-import json
 import sys
 
-PLAYLIST_URL = "https://www.youtube.com/playlist?list=PL9ymgSAPJFid17GxrePYsJz31DU7bHPEr"
-AUDIO_DIR = os.path.join(os.path.dirname(__file__), "..", "Cursos", "HF", "transcricoes", "audios")
-TEXT_DIR = os.path.join(os.path.dirname(__file__), "..", "Cursos", "HF", "transcricoes", "textos")
+BASE_DIR = os.path.join(os.path.dirname(__file__), "..", "Cursos", "HF", "transcricoes")
+AUDIO_DIR = os.path.join(BASE_DIR, "audios")
+TEXT_DIR = os.path.join(BASE_DIR, "textos")
 
-os.makedirs(AUDIO_DIR, exist_ok=True)
 os.makedirs(TEXT_DIR, exist_ok=True)
-
-
-def baixar_audios():
-    """Baixa apenas o áudio de todos os vídeos da playlist."""
-    print("=" * 60)
-    print("ETAPA 1: Baixando áudios da playlist...")
-    print("=" * 60)
-    cmd = [
-        "yt-dlp",
-        "-x",                          # extrair apenas áudio
-        "--audio-format", "mp3",       # converter para mp3
-        "--audio-quality", "5",        # qualidade média (menor arquivo)
-        "-o", os.path.join(AUDIO_DIR, "%(playlist_index)03d - %(title)s.%(ext)s"),
-        "--yes-playlist",
-        "--no-overwrites",             # não re-baixar existentes
-        PLAYLIST_URL,
-    ]
-    result = subprocess.run(cmd)
-    if result.returncode != 0:
-        print("AVISO: yt-dlp terminou com código", result.returncode)
-    return sorted(glob.glob(os.path.join(AUDIO_DIR, "*.mp3")))
 
 
 def transcrever(arquivos_audio):
     """Transcreve cada arquivo de áudio usando Whisper."""
-    print("\n" + "=" * 60)
-    print("ETAPA 2: Transcrevendo com Whisper...")
+    print("=" * 60)
+    print("Transcrevendo áudios do curso História da Filosofia (HF)")
     print(f"Total de arquivos: {len(arquivos_audio)}")
     print("=" * 60)
 
@@ -49,13 +27,16 @@ def transcrever(arquivos_audio):
     modelo = whisper.load_model("medium")
     print("Modelo 'medium' carregado.\n")
 
+    transcritos = 0
+    pulados = 0
+
     for i, audio_path in enumerate(arquivos_audio, 1):
         nome = os.path.splitext(os.path.basename(audio_path))[0]
         txt_path = os.path.join(TEXT_DIR, f"{nome}.txt")
 
-        # Pular se já transcrito
         if os.path.exists(txt_path) and os.path.getsize(txt_path) > 100:
             print(f"[{i}/{len(arquivos_audio)}] Já transcrito: {nome}")
+            pulados += 1
             continue
 
         print(f"[{i}/{len(arquivos_audio)}] Transcrevendo: {nome}")
@@ -65,18 +46,19 @@ def transcrever(arquivos_audio):
                 f.write(f"# {nome}\n\n")
                 f.write(result["text"])
             print(f"  -> Salvo em: {txt_path}")
+            transcritos += 1
         except Exception as e:
             print(f"  ERRO ao transcrever {nome}: {e}")
 
     print("\n" + "=" * 60)
-    print("CONCLUÍDO!")
-    print(f"Transcrições salvas em: {TEXT_DIR}")
+    print(f"CONCLUÍDO! {transcritos} transcritos, {pulados} já existiam.")
+    print(f"Transcrições em: {TEXT_DIR}")
     print("=" * 60)
 
 
 if __name__ == "__main__":
-    audios = baixar_audios()
+    audios = sorted(glob.glob(os.path.join(AUDIO_DIR, "*.mp3")))
     if not audios:
-        print("Nenhum áudio encontrado. Verifique se o download funcionou.")
+        print(f"Nenhum áudio .mp3 encontrado em: {AUDIO_DIR}")
         sys.exit(1)
     transcrever(audios)

@@ -568,6 +568,7 @@ button {
 /* --- LESSON CARDS --- */
 .lesson-card {
   display: flex;
+  align-items: center;
   gap: 16px;
   padding: 24px;
   background: var(--color-bg-alt);
@@ -575,6 +576,8 @@ button {
   transition: all var(--transition);
   border: 1px solid transparent;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .lesson-card:hover {
@@ -582,6 +585,11 @@ button {
   border-color: var(--color-accent);
   box-shadow: var(--shadow);
   transform: translateY(-2px);
+}
+
+.lesson-card:hover .lesson-arrow {
+  transform: translateX(4px);
+  color: var(--color-accent);
 }
 
 .lesson-number {
@@ -609,44 +617,15 @@ button {
 .lesson-desc {
   font-size: 14px;
   color: var(--color-text-light);
-  margin-bottom: 14px;
+  margin-bottom: 0;
 }
 
-.lesson-links {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.lesson-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--color-accent);
+.lesson-arrow {
+  flex-shrink: 0;
+  color: var(--color-text-light);
   transition: all var(--transition);
-}
-
-.lesson-link:hover {
-  color: var(--color-accent-hover);
-  transform: translateX(2px);
-}
-
-.lesson-link-pdf {
-  color: var(--color-gold);
-}
-
-.lesson-link-pdf:hover {
-  color: #b8923a;
-}
-
-.lesson-link-diagrama {
-  color: #38a169;
-}
-
-.lesson-link-diagrama:hover {
-  color: #2f855a;
+  display: flex;
+  align-items: center;
 }
 
 /* --- HERO WITH IMAGE --- */

@@ -2,3 +2,6 @@ node_modules/
 db/duvidas.json
 .vercel
 Cursos/HF/transcricoes/
+Cursos/GR/transcricoes/
+Cursos/PHGI/transcricoes/
+.claude/

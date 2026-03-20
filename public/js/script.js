@@ -173,26 +173,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 400);
   }
 
-  // Lesson cards (curso.html & historia-filosofia.html)
-  document.querySelectorAll('.lesson-card').forEach(card => {
-    card.addEventListener('click', (e) => {
-      // Let direct link clicks (assistir, ver esquemas, pdf) navigate normally
-      const clickedLink = e.target.closest('a');
-      if (clickedLink) return;
-
-      // If card has a dedicated page, navigate there
-      const aulaPage = card.dataset.aulaPage;
-      if (aulaPage) {
-        window.location.href = aulaPage;
-        return;
-      }
-
-      // Otherwise open peek modal with video
-      e.preventDefault();
-      openPeekFromLesson(card);
-    });
-  });
-
   // Video cards (index.html & videos.html)
   document.querySelectorAll('.video-card, .video-library-card').forEach(card => {
     if (card.dataset.video) {
