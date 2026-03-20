@@ -65,8 +65,13 @@ const DiagramRenderer = (function () {
       '</div>';
     }
 
+    var maxSize = 0;
+    for (var k = 0; k < data.rings.length; k++) {
+      if (data.rings[k].size > maxSize) maxSize = data.rings[k].size;
+    }
+
     return '<div class="cosmo-container reveal">' +
-      '<div class="cosmo-sphere">' + ringsHtml + '</div>' +
+      '<div class="cosmo-sphere" style="width:' + maxSize + 'px;height:' + maxSize + 'px;">' + ringsHtml + '</div>' +
       '<div class="cosmo-legend">' + legendHtml + '</div>' +
     '</div>';
   }
@@ -77,10 +82,11 @@ const DiagramRenderer = (function () {
     var html = '<div class="condition-grid reveal">';
     for (var i = 0; i < data.cards.length; i++) {
       var c = data.cards[i];
-      var accentStyle = c.accentColor ? 'border-top:3px solid ' + c.accentColor + ';' : '';
+      var cardStyle = c.accentColor ? '--accent:' + c.accentColor + ';' : '';
       var iconBgStyle = c.iconBg ? 'background:' + c.iconBg + ';' : '';
 
-      html += '<div class="condition-card" style="' + accentStyle + '">' +
+      html += '<div class="condition-card" style="' + cardStyle + '">' +
+        '<div style="position:absolute;top:0;left:0;right:0;height:3px;background:' + (c.accentColor || 'transparent') + ';"></div>' +
         '<div class="condition-icon" style="' + iconBgStyle + '">' + c.icon + '</div>' +
         '<h3>' + c.title + '</h3>' +
         '<p>' + c.text + '</p>';
@@ -157,9 +163,10 @@ const DiagramRenderer = (function () {
       var themeClass = panel.theme === 'dark' ? 'block-panel block-panel-dark' : 'block-panel block-panel-light';
       var items = '';
       for (var i = 0; i < panel.items.length; i++) {
+        var itemText = typeof panel.items[i] === 'string' ? panel.items[i] : panel.items[i].html || '';
         items += '<li>' +
           '<span class="block-list-icon ' + iconClass + '">' + svgIcon + '</span>' +
-          '<span>' + panel.items[i].html + '</span>' +
+          '<span>' + itemText + '</span>' +
         '</li>';
       }
       return '<div class="' + themeClass + '">' +
@@ -213,10 +220,16 @@ const DiagramRenderer = (function () {
       bodyHtml += '</tr>';
     }
 
-    return '<table class="compare-table reveal">' +
+    var html = '<table class="compare-table reveal">' +
       '<thead>' + headerHtml + '</thead>' +
       '<tbody>' + bodyHtml + '</tbody>' +
     '</table>';
+
+    if (data.subDiagram && data.subDiagram.type === 'causeCards') {
+      html += causeCards(data.subDiagram);
+    }
+
+    return html;
   }
 
   // ── Renderer: Cause Cards ─────────────────────────────────
@@ -258,9 +271,10 @@ const DiagramRenderer = (function () {
     html += '</div>';
 
     if (data.note) {
+      var noteText = typeof data.note === 'string' ? data.note : data.note.html || '';
       html += '<div class="reason-note reveal">' +
         '<div class="reason-note-icon">' + SVG_INFO + '</div>' +
-        '<div class="reason-note-text">' + data.note.html + '</div>' +
+        '<div class="reason-note-text">' + noteText + '</div>' +
       '</div>';
     }
 
@@ -327,7 +341,7 @@ const DiagramRenderer = (function () {
     };
 
     var renderFn = renderers[diagram.type];
-    var content = renderFn ? renderFn(diagram.data) : '';
+    var content = renderFn ? renderFn(diagram) : '';
 
     return '<section class="diagram-section" id="bloco' + (index + 1) + '">' +
       '<div class="container">' +
@@ -428,9 +442,10 @@ const DiagramRenderer = (function () {
     var descEl = document.getElementById('aulaDesc');
     var videoEl = document.getElementById('aulaVideo');
 
-    if (tagEl) tagEl.textContent = aula.tag || '';
-    if (titleEl) titleEl.innerHTML = aula.title || '';
-    if (descEl) descEl.textContent = aula.description || '';
+    document.title = 'Aula ' + aula.n + ': ' + aula.titulo + ' — Prof. Henrique Elfes';
+    if (tagEl) tagEl.textContent = 'Aula ' + aula.n + ' — ' + aula.bloco;
+    if (titleEl) titleEl.innerHTML = aula.tituloHtml || aula.titulo || '';
+    if (descEl) descEl.textContent = aula.desc || '';
     if (videoEl && aula.video) {
       videoEl.src = 'https://www.youtube.com/embed/' + aula.video + '?rel=0';
     }
