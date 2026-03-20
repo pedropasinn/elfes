@@ -262,6 +262,16 @@ button {
   text-align: center;
 }
 
+.hero-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 24px;
+  border: 3px solid rgba(201, 168, 76, 0.4);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
 .hero-tag {
   display: inline-block;
   font-size: 12px;
