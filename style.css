@@ -748,6 +748,13 @@ button {
   margin-bottom: 20px;
 }
 
+.course-icon-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .course-logo {
   margin-bottom: 20px;
 }
