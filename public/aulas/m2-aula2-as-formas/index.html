@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/aula-editorial.css">
+<link rel="stylesheet" href="/css/diagrams.css">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 <body>
@@ -364,6 +365,436 @@
   </div>
 </div>
 
+<!-- ===== DIAGRAMAS ===== -->
+
+<!-- Banner introdutório -->
+<div class="diagrams-banner reveal">
+  <div class="container">
+    <span class="diagrams-banner-tag">Diagramas da Aula</span>
+    <h2>As Formas em Esquema</h2>
+    <p>Visualize os conceitos centrais desta aula: essência e forma substancial, as visões de Platão e Aristóteles, a teoria hilemórfica e a ruptura nominalista.</p>
+  </div>
+</div>
+
+<!-- Navegação sticky dos diagramas -->
+<nav class="diagram-nav" id="diagramNav">
+  <div class="diagram-nav-inner">
+    <a href="#diag-essencia" class="diagram-nav-item active">Essência e Forma</a>
+    <a href="#diag-platao-vs-aristoteles" class="diagram-nav-item">Platão vs Aristóteles</a>
+    <a href="#diag-hilemorfica" class="diagram-nav-item">Teoria Hilemórfica</a>
+    <a href="#diag-nominalismo" class="diagram-nav-item">Ruptura Nominalista</a>
+    <a href="#diag-unidade" class="diagram-nav-item">Unidade do Ente</a>
+  </div>
+</nav>
+
+<!-- DIAGRAMA 1: Essência e Forma Substancial — hierarchy-stack -->
+<section class="diagram-section" id="diag-essencia">
+  <div class="container">
+    <div class="diagram-header reveal">
+      <div class="diagram-number">01</div>
+      <div class="diagram-title">Da Essência à Forma Substancial</div>
+      <div class="diagram-subtitle">A essência define a espécie; a forma substancial é a essência realizada no indivíduo concreto. A matéria individualiza, gerando a variedade dentro da ordem.</div>
+    </div>
+
+    <div class="reveal">
+      <div class="hierarchy-stack">
+        <div class="hierarchy-level" style="--level-width: 50%; border-color: rgba(201,168,76,0.35); background: rgba(201,168,76,0.06);">
+          <h4 style="color: var(--color-gold);">Mente Divina (Logos)</h4>
+          <p>Origem das formas — os padrões de todas as coisas no conhecimento de Deus</p>
+        </div>
+        <svg class="hierarchy-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        <div class="hierarchy-level" style="--level-width: 65%; border-color: rgba(77,101,255,0.3); background: rgba(77,101,255,0.04);">
+          <h4 style="color: #7b8fff;">Essência</h4>
+          <p>A estrutura lógica que define uma espécie de coisas — o conceito na mente, a essência na coisa</p>
+        </div>
+        <svg class="hierarchy-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        <div class="hierarchy-level" style="--level-width: 80%; border-color: rgba(56,161,105,0.3); background: rgba(56,161,105,0.04);">
+          <h4 style="color: #68d391;">Forma Substancial</h4>
+          <p>A essência individualizada — <em>hypo-stasis</em>: aquilo que "está por baixo" da manifestação externa de cada indivíduo</p>
+        </div>
+        <svg class="hierarchy-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        <div class="hierarchy-level" style="--level-width: 100%; border-color: rgba(229,62,62,0.25); background: rgba(229,62,62,0.04);">
+          <h4 style="color: #fc8181;">Indivíduos Concretos</h4>
+          <p>A enorme variedade dentro de cada espécie — cada cão, cada ser humano, cada coisa individual e irrepetível</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top: 40px;">
+      <div class="reason-note">
+        <div class="reason-note-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <div class="reason-note-text">
+          <strong>Etimologia:</strong> «Substância» vem do latim <em>sub-stare</em> (estar por baixo) — tradução do grego <em>hypo-stasis</em>. A forma substancial é aquilo que <strong>está por trás</strong> das aparências externas de cada coisa individual.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGRAMA 2: Platão vs Aristóteles — block-grid (vs) -->
+<section class="diagram-section" id="diag-platao-vs-aristoteles">
+  <div class="container">
+    <div class="diagram-header reveal">
+      <div class="diagram-number">02</div>
+      <div class="diagram-title">Platão vs Aristóteles</div>
+      <div class="diagram-subtitle">Dois caminhos para explicar a relação entre as formas (essências) e as coisas concretas do mundo material.</div>
+    </div>
+
+    <div class="reveal">
+      <div class="block-grid">
+        <!-- Platão -->
+        <div class="block-panel block-panel-dark">
+          <h3>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fc8181" stroke-width="2" style="vertical-align: -2px; margin-right: 6px;"><polyline points="12 2 12 12"/><polyline points="8 6 12 2 16 6"/></svg>
+            Platão — Aponta para o Alto
+          </h3>
+          <ul class="block-list">
+            <li>
+              <span class="block-list-icon icon-block"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></span>
+              <span>As formas perfeitas existem num <strong>mundo à parte</strong> — o "mundo das ideias", que corresponde à mente divina</span>
+            </li>
+            <li>
+              <span class="block-list-icon icon-block"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></span>
+              <span>As coisas materiais são <strong>cópias imperfeitas</strong> das formas puras, como um pintor que tenta reproduzir o original</span>
+            </li>
+            <li>
+              <span class="block-list-icon icon-block"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></span>
+              <span>Exige um <strong>demiurgo</strong> — ente intermediário que "copia" as formas na matéria</span>
+            </li>
+            <li>
+              <span class="block-list-icon icon-block"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg></span>
+              <span>Tendência ao <strong>dualismo</strong>: a alma controla o corpo como um boneco com cordas</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- VS -->
+        <div class="block-vs">
+          <div class="block-vs-circle">vs</div>
+        </div>
+
+        <!-- Aristóteles -->
+        <div class="block-panel block-panel-light">
+          <h3>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#68d391" stroke-width="2" style="vertical-align: -2px; margin-right: 6px;"><polyline points="12 22 12 12"/><polyline points="8 18 12 22 16 18"/></svg>
+            Aristóteles — Aponta para o Mundo
+          </h3>
+          <ul class="block-list">
+            <li>
+              <span class="block-list-icon icon-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span>As formas <strong>não existem separadas</strong> — existem apenas unidas à matéria na coisa concreta</span>
+            </li>
+            <li>
+              <span class="block-list-icon icon-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span>Toda coisa real é <strong>matéria informada</strong> — matéria dotada de forma, uma unidade perfeita</span>
+            </li>
+            <li>
+              <span class="block-list-icon icon-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span>Não é preciso demiurgo: forma e matéria <strong>constituem juntas</strong> a substância</span>
+            </li>
+            <li>
+              <span class="block-list-icon icon-check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span>Cada ente é <strong>uno</strong>: alma e corpo são uma só realidade, não duas coisas justapostas</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabela comparativa -->
+    <div class="reveal" style="margin-top: 48px;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Aspecto</th>
+            <th>Platão</th>
+            <th>Aristóteles</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Onde estão as formas?</td>
+            <td>Num mundo à parte — a mente divina, o "mundo das ideias"</td>
+            <td>Apenas na coisa concreta, unidas à matéria</td>
+          </tr>
+          <tr>
+            <td>Relação forma-matéria</td>
+            <td><span class="compare-highlight highlight-red">Separadas</span> — a matéria recebe cópias imperfeitas</td>
+            <td><span class="compare-highlight highlight-green">Unidas</span> — formam juntas a substância</td>
+          </tr>
+          <tr>
+            <td>Intermediário</td>
+            <td>Necessita de um <strong>demiurgo</strong></td>
+            <td>Dispensável — a unidade é direta</td>
+          </tr>
+          <tr>
+            <td>Visão do ser humano</td>
+            <td><span class="compare-highlight highlight-red">Dualista</span> — alma e corpo separados</td>
+            <td><span class="compare-highlight highlight-green">Unitária</span> — alma e corpo são um só ente</td>
+          </tr>
+          <tr>
+            <td>Inspiração</td>
+            <td>Geometria e matemática (pitagóricos)</td>
+            <td>Observação do mundo físico e natural</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGRAMA 3: Teoria Hilemórfica — reason-flow (3 passos) -->
+<section class="diagram-section" id="diag-hilemorfica">
+  <div class="container">
+    <div class="diagram-header reveal">
+      <div class="diagram-number">03</div>
+      <div class="diagram-title">A Teoria Hilemórfica</div>
+      <div class="diagram-subtitle">Do grego <em>hyle</em> (matéria) + <em>morphe</em> (forma): todas as coisas materiais são compostos unos de matéria e forma.</div>
+    </div>
+
+    <div class="reveal">
+      <div class="reason-flow">
+        <!-- Passo 1: Forma -->
+        <div class="reason-step">
+          <div class="reason-step-num">01</div>
+          <h4>Forma</h4>
+          <div class="reason-step-latin">morphe / eidos</div>
+          <p>A estrutura lógica, a essência que define <em>o que</em> uma coisa é. Não existe isolada neste mundo — ninguém viu um triângulo passear pela rua.</p>
+          <div class="reason-step-example">
+            <strong>Exemplo:</strong> A "forma de cão" define a espécie — mas nenhum cão abstrato existe por si.
+          </div>
+          <div class="reason-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f0f1a" stroke-width="3"><polyline points="9 6 15 12 9 18"/></svg>
+          </div>
+        </div>
+
+        <!-- Passo 2: Matéria -->
+        <div class="reason-step">
+          <div class="reason-step-num">02</div>
+          <h4>Matéria</h4>
+          <div class="reason-step-latin">hyle</div>
+          <p>O substrato que recebe a forma e individualiza cada coisa. Também não existe por si — não há matéria pura, sem forma alguma, neste mundo.</p>
+          <div class="reason-step-example">
+            <strong>Exemplo:</strong> A argila sem forma não é coisa alguma — precisa ser moldada para existir como algo definido.
+          </div>
+          <div class="reason-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f0f1a" stroke-width="3"><polyline points="9 6 15 12 9 18"/></svg>
+          </div>
+        </div>
+
+        <!-- Passo 3: Substância -->
+        <div class="reason-step">
+          <div class="reason-step-num">03</div>
+          <h4>Substância</h4>
+          <div class="reason-step-latin">ousia / hypostasis</div>
+          <p>A coisa concreta e real — a <strong>união</strong> de forma e matéria. Só a substância exerce o ato de ser; só ela é verdadeiramente um <em>ente</em>.</p>
+          <div class="reason-step-example">
+            <strong>Exemplo:</strong> Este cão concreto, com seus pelos, focinho e tamanho próprios — é a forma unida à matéria.
+          </div>
+          <div class="reason-arrow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f0f1a" stroke-width="3"><polyline points="9 6 15 12 9 18"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Convergência visual -->
+    <div class="reveal" style="margin-top: 48px;">
+      <div class="purpose-visual">
+        <div class="purpose-top">
+          <div class="purpose-desire" style="border-color: rgba(77,101,255,0.25);">
+            <div class="purpose-desire-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#7b8fff" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h4>Forma</h4>
+            <p>Define o que a coisa é</p>
+          </div>
+          <div class="purpose-desire" style="border-color: rgba(229,62,62,0.2);">
+            <div class="purpose-desire-icon">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fc8181" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/></svg>
+            </div>
+            <h4>Matéria</h4>
+            <p>Individualiza e concretiza</p>
+          </div>
+        </div>
+        <div class="purpose-converge">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          <span class="purpose-converge-label">Unidas na</span>
+        </div>
+        <div class="purpose-result">
+          <div class="purpose-result-content">
+            <span class="purpose-result-tag">Coisa Concreta</span>
+            <h3>Matéria Informada</h3>
+            <p>Toda coisa real neste mundo é a <strong>união</strong> perfeita de forma e matéria — uma substância una e indivisível.</p>
+            <div class="purpose-triad">
+              <span class="purpose-triad-item">Ente</span>
+              <span class="purpose-triad-item">Substância</span>
+              <span class="purpose-triad-item">Hypostasis</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGRAMA 4: A Ruptura Nominalista — timeline -->
+<section class="diagram-section" id="diag-nominalismo">
+  <div class="container">
+    <div class="diagram-header reveal">
+      <div class="diagram-number">04</div>
+      <div class="diagram-title">A Ruptura Nominalista</div>
+      <div class="diagram-subtitle">Como a releitura de Platão pelo nominalismo medieval dividiu o pensamento ocidental em duas grandes correntes a partir de 1600.</div>
+    </div>
+
+    <div class="reveal">
+      <div class="diagram-timeline">
+        <div class="diagram-timeline-item">
+          <div class="diagram-timeline-content">
+            <div class="diagram-timeline-tag">Origem</div>
+            <h4>Platão e o Neoplatonismo</h4>
+            <p>As formas puras existem na mente divina. O mundo material é cópia imperfeita. Esta ideia atravessa séculos e inspira Agostinho, que situa as formas no <strong>Verbo</strong> (Logos divino).</p>
+          </div>
+          <div class="diagram-timeline-dot"></div>
+        </div>
+
+        <div class="diagram-timeline-item">
+          <div class="diagram-timeline-content">
+            <div class="diagram-timeline-tag">Sécs. XIII–XIV</div>
+            <h4>Duns Scoto e Guilherme de Ockham</h4>
+            <p>«Deus cria por amor, e o amor se dirige a <strong>indivíduos</strong>, não a formas abstratas.» Portanto, as formas universais seriam apenas nomes — <em>flatus vocis</em>, "sopros da voz" sem referente real.</p>
+          </div>
+          <div class="diagram-timeline-dot"></div>
+        </div>
+
+        <div class="diagram-timeline-item">
+          <div class="diagram-timeline-content">
+            <div class="diagram-timeline-tag">A partir de ~1600</div>
+            <h4>Racionalismo (Descartes)</h4>
+            <p>Herda o lado das <strong>formas puras</strong>: a realidade são as estruturas matemáticas e lógicas; o mundo material é mera aplicação imperfeita de princípios mentais.</p>
+          </div>
+          <div class="diagram-timeline-dot"></div>
+        </div>
+
+        <div class="diagram-timeline-item">
+          <div class="diagram-timeline-content">
+            <div class="diagram-timeline-tag">A partir de ~1600</div>
+            <h4>Empirismo (Francis Bacon)</h4>
+            <p>Herda o lado dos <strong>indivíduos</strong>: só é real o que os sentidos percebem. As formas universais seriam generalizações a partir da experiência sensorial — nada mais.</p>
+          </div>
+          <div class="diagram-timeline-dot"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top: 32px;">
+      <div class="reason-note">
+        <div class="reason-note-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"><path d="M12 9v2m0 4h.01M5.07 19h13.86c1.1 0 1.79-1.19 1.24-2.14l-6.93-12c-.55-.95-1.91-.95-2.46 0l-6.93 12c-.55.95.13 2.14 1.24 2.14z"/></svg>
+        </div>
+        <div class="reason-note-text">
+          <strong>Consequência central:</strong> O nominalismo rompe a unidade entre forma e matéria que Aristóteles havia estabelecido. Daí nascem as <strong>duas correntes</strong> que moldam todo o pensamento ocidental moderno: racionalismo (só as formas são reais) e empirismo (só os indivíduos são reais).
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGRAMA 5: A Unidade do Ente — condition-cards -->
+<section class="diagram-section" id="diag-unidade">
+  <div class="container">
+    <div class="diagram-header reveal">
+      <div class="diagram-number">05</div>
+      <div class="diagram-title">A Unidade do Ente</div>
+      <div class="diagram-subtitle">Para Aristóteles e Tomás de Aquino, cada coisa é uma unidade — não uma junção forçada de partes separadas. Ente é tudo aquilo que exerce o ato de ser.</div>
+    </div>
+
+    <div class="reveal">
+      <div class="condition-grid">
+        <!-- Card 1 -->
+        <div class="condition-card">
+          <div class="condition-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e53e3e" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          </div>
+          <h3>Contra o Dualismo</h3>
+          <p>O ser humano <strong>não é</strong> um espírito que controla um corpo como um boneco com cordas. Alma e corpo formam uma unidade: cada gesto, cada expressão do rosto <em>é</em> a alma se manifestando.</p>
+          <div class="condition-quote">
+            <p>«A alma está em cada gesto que fazemos. Está na nossa cara. Está na conformação do nosso corpo.»</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="condition-card">
+          <div class="condition-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#4d65ff" stroke-width="2"><path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>O Ente</h3>
+          <p>«Ente» vem do particípio presente: aquilo que <strong>exerce o ato de ser</strong> — como «presidente» (quem preside), «estudante» (quem estuda). Só a coisa concreta exerce esse ato neste mundo.</p>
+          <div class="condition-quote">
+            <p>«A forma não exerce o ato de ser neste mundo. A matéria pura também não. Todas as coisas são matéria informada.»</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="condition-card">
+          <div class="condition-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <h3>Formas Puras Possíveis</h3>
+          <p>Tomás de Aquino admite que podem existir <strong>entes de pura essência</strong> — seres espirituais sem matéria (anjos, demônios). Como não têm matéria para individualizar, cada um esgota a sua espécie.</p>
+          <div class="condition-quote">
+            <p>«Cada ser espiritual esgota a sua espécie — existe uma única forma que pertença àquela espécie no campo espiritual.»</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature list: conceitos-chave -->
+    <div class="reveal" style="margin-top: 48px;">
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="feature-icon feature-icon-gold">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <div>
+            <h4>Logos</h4>
+            <p>A «palavra» em grego — abrange o conceito na mente, a palavra falada e a escrita. Para os gregos, o Logos é o princípio estruturador divino.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon feature-icon-blue">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7b8fff" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          </div>
+          <div>
+            <h4>Hipóstase</h4>
+            <p>Do grego <em>hypo</em> (abaixo) + <em>stasis</em> (estar): aquilo que está por trás da aparência externa. Em latim: <em>sub-stantia</em>.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon feature-icon-green">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#68d391" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <div>
+            <h4>Hilemorfismo</h4>
+            <p>Do grego <em>hyle</em> (matéria) + <em>morphe</em> (forma): a teoria de que todas as coisas materiais são compostos de matéria e forma.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon feature-icon-red">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fc8181" stroke-width="2"><path d="M12 9v2m0 4h.01M5.07 19h13.86c1.1 0 1.79-1.19 1.24-2.14l-6.93-12c-.55-.95-1.91-.95-2.46 0l-6.93 12c-.55.95.13 2.14 1.24 2.14z"/></svg>
+          </div>
+          <div>
+            <h4>Nominalismo</h4>
+            <p>Corrente que afirma que os universais (formas, essências) são apenas nomes — <em>flatus vocis</em> — sem correspondência com a realidade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="container footer-inner">
@@ -382,5 +813,48 @@
 </div>
 
 <script src="/js/aula-editorial.js"></script>
+
+<!-- Diagram scroll reveal + active nav -->
+<script>
+(function () {
+  // Scroll reveal for diagram sections
+  var reveals = document.querySelectorAll('.diagram-section .reveal');
+  if (reveals.length) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(function (el) { observer.observe(el); });
+  }
+
+  // Active nav tracking for diagram-nav
+  var navItems = document.querySelectorAll('#diagramNav .diagram-nav-item');
+  var sections = [];
+  navItems.forEach(function (item) {
+    var href = item.getAttribute('href');
+    if (href) {
+      var sec = document.querySelector(href);
+      if (sec) sections.push({ el: sec, nav: item });
+    }
+  });
+
+  if (sections.length) {
+    var navObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          navItems.forEach(function (n) { n.classList.remove('active'); });
+          sections.forEach(function (s) {
+            if (s.el === e.target) s.nav.classList.add('active');
+          });
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    sections.forEach(function (s) { navObserver.observe(s.el); });
+  }
+})();
+</script>
 </body>
 </html>

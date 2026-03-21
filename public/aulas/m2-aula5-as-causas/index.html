@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/aula-editorial.css">
+<link rel="stylesheet" href="/css/diagrams.css">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 <body>
@@ -481,6 +482,376 @@
     </div>
   </div>
 </div>
+
+<!-- ===== DIAGRAMAS ===== -->
+<div class="diagrams-banner reveal">
+  <span class="diagrams-banner-tag">Diagramas</span>
+  <h2>As Causas em Perspectiva</h2>
+  <p>Esquemas visuais dos conceitos centrais desta aula: as quatro causas de Aristoteles, a hierarquia da finalidade, a primazia da causa final e a erosao moderna da causalidade.</p>
+</div>
+
+<nav class="diagram-nav" id="diagramNav">
+  <div class="diagram-nav-inner">
+    <a href="#diag-quatro-causas" class="diagram-nav-item active">Quatro Causas</a>
+    <a href="#diag-hierarquia" class="diagram-nav-item">Hierarquia Final</a>
+    <a href="#diag-primazia" class="diagram-nav-item">Primazia da Causa Final</a>
+    <a href="#diag-ockham-vs-aristoteles" class="diagram-nav-item">Ockham vs. Aristoteles</a>
+    <a href="#diag-erosao" class="diagram-nav-item">Erosao da Causalidade</a>
+    <a href="#diag-provas-deus" class="diagram-nav-item">Provas de Deus</a>
+  </div>
+</nav>
+
+<!-- DIAGRAMA 1: As Quatro Causas -->
+<section class="diagram-section" id="diag-quatro-causas">
+  <div class="container">
+    <div class="diagram-header reveal">
+      <div class="diagram-number">01</div>
+      <div class="diagram-title">As Quatro Causas de Aristoteles</div>
+      <div class="diagram-subtitle">Aristoteles distingue quatro tipos basicos de causas que explicam por que uma coisa existe e por que e como e.</div>
+    </div>
+    <div class="causes-grid reveal">
+      <div class="cause-card">
+        <div class="cause-number">I</div>
+        <div class="cause-name">Causa Material</div>
+        <div class="cause-question">De que e feito?</div>
+        <div class="cause-desc">O substrato ou materia parcialmente informada que constitui a coisa &mdash; DNA, RNA, proteinas, pedras, tijolos.</div>
+        <span class="cause-owner owner-primary">Constituinte</span>
+      </div>
+      <div class="cause-card">
+        <div class="cause-number">II</div>
+        <div class="cause-name">Causa Formal</div>
+        <div class="cause-question">O que e?</div>
+        <div class="cause-desc">A forma ou estrutura racional que organiza a materia e lhe da identidade &mdash; o que faz um cao ser cao.</div>
+        <span class="cause-owner owner-primary">Constituinte</span>
+      </div>
+      <div class="cause-card">
+        <div class="cause-number">III</div>
+        <div class="cause-name">Causa Eficiente</div>
+        <div class="cause-question">Quem o produziu?</div>
+        <div class="cause-desc">O agente que leva a potencia ao ato, unindo materia e forma &mdash; os pais que geram o filhote, o artesao que constroi.</div>
+        <span class="cause-owner owner-secondary">Agente</span>
+      </div>
+      <div class="cause-card">
+        <div class="cause-number">IV</div>
+        <div class="cause-name">Causa Final</div>
+        <div class="cause-question">Para que serve?</div>
+        <div class="cause-desc">A finalidade para a qual a coisa existe ou age &mdash; desde a sobrevivencia da especie ate a Causa ultima, Deus.</div>
+        <span class="cause-owner owner-both">Diretriz</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGRAMA 2: Hierarquia das Causas Finais -->
+<section class="diagram-section" id="diag-hierarquia">
+  <div class="container">
+    <div class="diagram-header reveal">
+      <div class="diagram-number">02</div>
+      <div class="diagram-title">A Hierarquia das Causas Finais</div>
+      <div class="diagram-subtitle">A causa final se desdobra em niveis sucessivos: de cada fim proximo emerge um fim mais amplo, ate a Causa ultima do universo.</div>
+    </div>
+    <div class="hierarchy-stack reveal">
+      <div class="hierarchy-level" style="--level-width: 40%; border-color: var(--color-gold); background: rgba(201,168,76,0.06);">
+        <h4 style="color: var(--color-gold);">Deus</h4>
+        <p>Causa final ultima &mdash; move o mundo por atracao</p>
+      </div>
+      <svg class="hierarchy-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: rgba(201,168,76,0.3);"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="hierarchy-level" style="--level-width: 55%; border-color: rgba(77,101,255,0.25);">
+        <h4>Felicidade / Bem</h4>
+        <p>Finalidade ultima do ser humano individual</p>
+      </div>
+      <svg class="hierarchy-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: rgba(201,168,76,0.3);"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="hierarchy-level" style="--level-width: 70%; border-color: rgba(56,161,105,0.2);">
+        <h4>Produzir para a sociedade</h4>
+        <p>Causa final social &mdash; contribuicao ao bem comum</p>
+      </div>
+      <svg class="hierarchy-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: rgba(201,168,76,0.3);"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="hierarchy-level" style="--level-width: 85%; border-color: rgba(128,90,213,0.2);">
+        <h4>Causa Final Segunda</h4>
+        <p>A finalidade que o dono atribui &mdash; cacar, ter companhia</p>
+      </div>
+      <svg class="hierarchy-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color: rgba(201,168,76,0.3);"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="hierarchy-level" style="--level-width: 100%; border-color: rgba(229,62,62,0.2);">
+        <h4>Causa Final Primeira</h4>
+        <p>Manter-se na existencia e reproduzir-se &mdash; gerar filhotes da mesma especie</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGRAMA 3: Primazia da Causa Final -->
+<section class="diagram-section" id="diag-primazia">
+  <div class="container">
+    <div class="diagram-header reveal">
+      <div class="diagram-number">03</div>
+      <div class="diagram-title">A Primazia da Causa Final</div>
+      <div class="diagram-subtitle">A causa final e "a primeira na intencao e a ultima na realizacao". Ela determina a forma, que por sua vez determina a materia, e orienta a acao da causa eficiente.</div>
+    </div>
+    <div class="reason-flow reveal">
+      <div class="reason-step">
+        <div class="reason-step-num">1</div>
+        <h4>Causa Final</h4>
+        <p class="reason-step-latin">Determina a forma</p>
+        <p>A finalidade do bico determina qual forma ele deve assumir &mdash; ciscar, pescar, filtrar, perfurar ou quebrar.</p>
+        <div class="reason-step-example">
+          <strong>Exemplo:</strong> O beija-flor precisa de um bico longo e fino para explorar o nectar das flores ate o fundo.
+        </div>
+        <div class="reason-arrow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0f0f1a" stroke-width="3"><polyline points="9 6 15 12 9 18"/></svg>
+        </div>
+      </div>
+      <div class="reason-step">
+        <div class="reason-step-num">2</div>
+        <h4>Causa Formal</h4>
+        <p class="reason-step-latin">Determina a materia</p>
+        <p>A forma exigida pela finalidade determina que tipo de materia sera adequado &mdash; osso denso, queratina flexivel.</p>
+        <div class="reason-step-example">
+          <strong>Exemplo:</strong> O bico do pica-pau requer estrutura ossea densa e queratina reforçada para perfurar madeira.
+        </div>
+        <div class="reason-arrow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0f0f1a" stroke-width="3"><polyline points="9 6 15 12 9 18"/></svg>
+        </div>
+      </div>
+      <div class="reason-step">
+        <div class="reason-step-num">3</div>
+        <h4>Causa Eficiente</h4>
+        <p class="reason-step-latin">Orientada pela finalidade</p>
+        <p>Quando ha proposito consciente, a causa final dirige as acoes da causa eficiente para atingir o resultado desejado.</p>
+        <div class="reason-step-example">
+          <strong>Exemplo:</strong> O jogador de golfe calcula direcao e forca da tacada em funcao da posicao do buraco &mdash; a causa final dirige o ato.
+        </div>
+      </div>
+    </div>
+    <div class="reason-note reveal">
+      <div class="reason-note-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+      </div>
+      <div class="reason-note-text">
+        A causa final e <strong>final em dois sentidos</strong>: primeiro, no sentido de ser um <strong>destino</strong> para o qual tudo converge; segundo, no sentido de ser a <strong>razao de todas as outras causas</strong>. Sem causa final, nada se moveria.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGRAMA 4: Ockham vs. Aristoteles -->
+<section class="diagram-section" id="diag-ockham-vs-aristoteles">
+  <div class="container">
+    <div class="diagram-header reveal">
+      <div class="diagram-number">04</div>
+      <div class="diagram-title">Ockham vs. Aristoteles</div>
+      <div class="diagram-subtitle">A navalha de Ockham propoe reduzir as explicacoes ao minimo de elementos observaveis. Na pratica, isso significou abandonar a causa final e reduzir toda explicacao a causa eficiente.</div>
+    </div>
+    <div class="block-grid reveal">
+      <div class="block-panel block-panel-dark">
+        <h3>Visao Ocamista</h3>
+        <ul class="block-list">
+          <li>
+            <span class="block-list-icon icon-block">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </span>
+            Prioridade as causas <strong>observaveis e imediatas</strong>
+          </li>
+          <li>
+            <span class="block-list-icon icon-block">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </span>
+            Causa final excluida como "hipotetica" e nao demonstravel
+          </li>
+          <li>
+            <span class="block-list-icon icon-block">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </span>
+            So a <strong>causa eficiente</strong> basta para explicar os fenomenos
+          </li>
+          <li>
+            <span class="block-list-icon icon-block">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </span>
+            Visao <strong>mecanicista</strong> adotada pelas ciencias modernas
+          </li>
+        </ul>
+      </div>
+      <div class="block-vs">
+        <div class="block-vs-circle">vs</div>
+      </div>
+      <div class="block-panel block-panel-light">
+        <h3>Visao Aristotelica</h3>
+        <ul class="block-list">
+          <li>
+            <span class="block-list-icon icon-check">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            As <strong>quatro causas</strong> sao todas necessarias para uma explicacao completa
+          </li>
+          <li>
+            <span class="block-list-icon icon-check">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            A causa final <strong>determina</strong> a forma e orienta a causa eficiente
+          </li>
+          <li>
+            <span class="block-list-icon icon-check">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            A finalidade e <strong>evidente</strong> na natureza: bicos, orgaos, organismos
+          </li>
+          <li>
+            <span class="block-list-icon icon-check">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            Olhar so para a causa eficiente e <strong>reduzir totalmente</strong> a visao
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGRAMA 5: Erosao da Causalidade -->
+<section class="diagram-section" id="diag-erosao">
+  <div class="container">
+    <div class="diagram-header reveal">
+      <div class="diagram-number">05</div>
+      <div class="diagram-title">A Erosao Moderna da Causalidade</div>
+      <div class="diagram-subtitle">De Ockham a Kant, um processo historico de progressiva reducao e questionamento do principio da causalidade.</div>
+    </div>
+    <div class="diagram-timeline reveal">
+      <div class="diagram-timeline-item">
+        <div class="diagram-timeline-content">
+          <div class="diagram-timeline-tag">Seculo XIV</div>
+          <h4>Guilherme de Ockham</h4>
+          <p>Propoe a <strong>navalha de Ockham</strong>: principio de parcimonia explicativa. Rejeita as causas finais como hipoteticas e nao observaveis. Inaugura a reducao a causa eficiente.</p>
+        </div>
+        <div class="diagram-timeline-dot"></div>
+      </div>
+      <div class="diagram-timeline-item">
+        <div class="diagram-timeline-content">
+          <div class="diagram-timeline-tag">Seculo XVII</div>
+          <h4>A Ciencia Mecanicista</h4>
+          <p>As ciencias fisicas e biologicas adotam a visao ocamista. A <strong>causa eficiente</strong> torna-se a unica causa considerada legitima. Visao precisa, porem limitada.</p>
+        </div>
+        <div class="diagram-timeline-dot"></div>
+      </div>
+      <div class="diagram-timeline-item">
+        <div class="diagram-timeline-content">
+          <div class="diagram-timeline-tag">Seculo XVIII</div>
+          <h4>David Hume</h4>
+          <p>Vai alem: nega a propria <strong>causalidade</strong>. Os sentidos mostram apenas sucessao de eventos, nunca conexao causal. A causalidade seria mera associacao mental por habito.</p>
+        </div>
+        <div class="diagram-timeline-dot"></div>
+      </div>
+      <div class="diagram-timeline-item">
+        <div class="diagram-timeline-content">
+          <div class="diagram-timeline-tag">Seculo XVIII</div>
+          <h4>Immanuel Kant</h4>
+          <p>Contradiz Hume: a causalidade e real, mas apenas como <strong>principio a priori da mente</strong> &mdash; uma lei do entendimento, nao necessariamente da realidade em si. Polemica historicamente acirrada, jamais resolvida.</p>
+        </div>
+        <div class="diagram-timeline-dot"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGRAMA 6: Tres Provas da Existencia de Deus -->
+<section class="diagram-section" id="diag-provas-deus">
+  <div class="container">
+    <div class="diagram-header reveal">
+      <div class="diagram-number">06</div>
+      <div class="diagram-title">Tres Provas da Existencia de Deus</div>
+      <div class="diagram-subtitle">A partir da causalidade, Aristoteles e Tomas de Aquino formulam tres vias convergentes para demonstrar a existencia de Deus.</div>
+    </div>
+    <div class="purpose-visual reveal">
+      <div class="purpose-top">
+        <div class="purpose-desire">
+          <div class="purpose-desire-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#7b8fff" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h4>Primeiro Motor Imovel</h4>
+          <p>A serie ato-potencia nao pode ser infinita: exige um <strong>ato puro</strong> que move sem ser movido.</p>
+        </div>
+        <div class="purpose-desire">
+          <div class="purpose-desire-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fc8181" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h4>Causa Incausada</h4>
+          <p>A cadeia de causas e efeitos exige uma <strong>causa primeira</strong> que nao seja efeito de nenhuma outra.</p>
+        </div>
+        <div class="purpose-desire">
+          <div class="purpose-desire-icon">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>
+          </div>
+          <h4>Inteligencia Ordenadora</h4>
+          <p>A ordem e a finalidade do universo apontam para uma <strong>inteligencia</strong> que o projetou.</p>
+        </div>
+      </div>
+      <div class="purpose-converge">
+        <svg width="24" height="40" viewBox="0 0 24 40" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="0" x2="12" y2="36"/><line x1="20" y1="0" x2="12" y2="36"/><polyline points="7 32 12 40 17 32"/></svg>
+        <span class="purpose-converge-label">Convergem</span>
+      </div>
+      <div class="purpose-result">
+        <div class="purpose-result-content">
+          <span class="purpose-result-tag">Conclusao</span>
+          <h3>Deus</h3>
+          <p>Simultaneamente <strong>fim ultimo</strong> para o qual tudo converge por atracao e <strong>primeira causa</strong> de onde tudo se origina.</p>
+          <div class="purpose-triad">
+            <span class="purpose-triad-item">Ato Puro</span>
+            <span class="purpose-triad-item">Causa Incausada</span>
+            <span class="purpose-triad-item">Fim Ultimo</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DIAGRAM JS: scroll reveal + active nav ===== -->
+<script>
+(function() {
+  /* Scroll Reveal for diagram sections */
+  const reveals = document.querySelectorAll('.diagram-section .reveal, .diagrams-banner.reveal');
+  const revealObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach(function(el) { revealObs.observe(el); });
+
+  /* Active nav tracking */
+  var navItems = document.querySelectorAll('#diagramNav .diagram-nav-item');
+  var sections = [];
+  navItems.forEach(function(item) {
+    var id = item.getAttribute('href').replace('#', '');
+    var sec = document.getElementById(id);
+    if (sec) sections.push({ el: sec, nav: item });
+  });
+
+  var navObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        navItems.forEach(function(n) { n.classList.remove('active'); });
+        sections.forEach(function(s) {
+          if (s.el === e.target) s.nav.classList.add('active');
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+
+  sections.forEach(function(s) { navObs.observe(s.el); });
+
+  /* Smooth scroll for diagram nav */
+  navItems.forEach(function(item) {
+    item.addEventListener('click', function(ev) {
+      ev.preventDefault();
+      var id = this.getAttribute('href').replace('#', '');
+      var target = document.getElementById(id);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+})();
+</script>
 
 <!-- ===== FOOTER ===== -->
 <footer class="footer">

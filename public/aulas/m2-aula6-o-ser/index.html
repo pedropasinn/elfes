@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/aula-editorial.css">
+<link rel="stylesheet" href="/css/diagrams.css">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 <body>
@@ -426,6 +427,376 @@
   </div>
 </div>
 
+<!-- ===== DIAGRAMAS CONCEITUAIS ===== -->
+<div class="diagrams-banner reveal">
+  <div class="container">
+    <span class="diagrams-banner-tag">Diagramas Conceituais</span>
+    <h2>Mapas da Aula</h2>
+    <p>Esquemas visuais dos conceitos centrais desta aula sobre o Ser — de Parmênides ao ato de ser de Tomás de Aquino e os desvios da modernidade.</p>
+  </div>
+</div>
+
+<!-- --- Navegação sticky dos diagramas --- -->
+<nav class="diagram-nav" id="diagramNav">
+  <div class="diagram-nav-inner">
+    <a href="#diagrama-distincao" class="diagram-nav-item active">Ser vs. Existir</a>
+    <a href="#diagrama-parmenides" class="diagram-nav-item">O Ser de Parmênides</a>
+    <a href="#diagrama-ato" class="diagram-nav-item">O Ato de Ser</a>
+    <a href="#diagrama-transcendentais" class="diagram-nav-item">Transcendentais</a>
+    <a href="#diagrama-hierarquia" class="diagram-nav-item">Hierarquia do Ser</a>
+    <a href="#diagrama-desvios" class="diagram-nav-item">Desvios Modernos</a>
+  </div>
+</nav>
+
+<!-- ====== DIAGRAMA 1: Ser vs. Existir ====== -->
+<section class="diagram-section" id="diagrama-distincao">
+  <div class="container">
+    <div class="diagram-header reveal">
+      <div class="diagram-number">01</div>
+      <h2 class="diagram-title">Ser vs. Existir</h2>
+      <p class="diagram-subtitle">Uma distinção fundamental que se perdeu na modernidade: ser diz respeito à realidade da coisa; existir, à sua manifestação a nós.</p>
+    </div>
+
+    <div class="block-grid reveal">
+      <div class="block-panel block-panel-dark">
+        <h3>Ser</h3>
+        <ul class="block-list">
+          <li>
+            <span class="block-list-icon icon-check">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/></svg>
+            </span>
+            <span>Algo é <strong>real</strong>, independentemente de ser conhecido ou percebido</span>
+          </li>
+          <li>
+            <span class="block-list-icon icon-check">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/></svg>
+            </span>
+            <span>Uma rocha no lado oculto da Lua <em>é</em>, mesmo que ninguém a tenha observado</span>
+          </li>
+          <li>
+            <span class="block-list-icon icon-check">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/></svg>
+            </span>
+            <span>Diz respeito à <strong>realidade da coisa em si mesma</strong></span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="block-vs">
+        <div class="block-vs-circle">vs</div>
+      </div>
+
+      <div class="block-panel block-panel-light">
+        <h3>Existir</h3>
+        <ul class="block-list">
+          <li>
+            <span class="block-list-icon icon-block">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </span>
+            <span>Do latim <em>exsistere</em>: algo que <strong>se manifesta para fora</strong></span>
+          </li>
+          <li>
+            <span class="block-list-icon icon-block">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </span>
+            <span>Existe tudo aquilo que <strong>percebemos</strong>, tocamos, observamos</span>
+          </li>
+          <li>
+            <span class="block-list-icon icon-block">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </span>
+            <span>Diz respeito ao <strong>conhecimento humano</strong> da realidade</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="reason-note reveal">
+      <div class="reason-note-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+      </div>
+      <div class="reason-note-text">
+        A mesma raiz <em>sistere</em> aparece em <strong>resistir</strong>, <strong>desistir</strong>, <strong>consistir</strong> e <strong>existir</strong>. O prefixo <em>ex-</em> indica manifestação para fora — portanto, existir é algo que se mostra, que tem permanência e se manifesta a nós.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== DIAGRAMA 2: O Ser de Parmênides ====== -->
+<section class="diagram-section" id="diagrama-parmenides">
+  <div class="container">
+    <div class="diagram-header reveal">
+      <div class="diagram-number">02</div>
+      <h2 class="diagram-title">O Ser Segundo Parmênides</h2>
+      <p class="diagram-subtitle">O primeiro filósofo a examinar o conceito de ser chegou a conclusões radicais — e, sem o saber, vislumbrou atributos do próprio Deus.</p>
+    </div>
+
+    <div class="condition-grid reveal">
+      <div class="condition-card">
+        <div class="condition-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fc8181" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <h3>O Princípio</h3>
+        <p>O ser é e o não-ser não é. Há uma oposição absoluta entre ser e nada. Mudança implicaria uma passagem do não-ser ao ser — o que é impossível.</p>
+        <div class="condition-quote">
+          <p>O que é, é, e o que não é, não é.</p>
+        </div>
+      </div>
+      <div class="condition-card">
+        <div class="condition-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7b8fff" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <h3>Propriedades</h3>
+        <p>O ser é <strong>uno</strong>, <strong>eterno</strong>, <strong>imutável</strong> e <strong>indivisível</strong>. Assume a forma perfeita — a esfera. Sem estruturação interna: ou é, ou não é.</p>
+      </div>
+      <div class="condition-card">
+        <div class="condition-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>A Ilusão</h3>
+        <p>As formas que observamos — a variedade, a mudança — são apenas ilusões na superfície das coisas. A única realidade é o ser compacto e indistinto.</p>
+      </div>
+      <div class="condition-card">
+        <div class="condition-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#38a169" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/></svg>
+        </div>
+        <h3>Paralelo Budista</h3>
+        <p>Parmênides atingiu, por via filosófica, a mesma visão do budismo: a realidade sensível é ilusão. A iluminação exige livrar-se de todas as aparências.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== DIAGRAMA 3: O Ato de Ser ====== -->
+<section class="diagram-section" id="diagrama-ato">
+  <div class="container">
+    <div class="diagram-header reveal">
+      <div class="diagram-number">03</div>
+      <h2 class="diagram-title">O Ato de Ser</h2>
+      <p class="diagram-subtitle">De Aristóteles a Tomás de Aquino: a grande descoberta metafísica de que forma e matéria não bastam — é preciso o ato de ser.</p>
+    </div>
+
+    <div class="reason-flow reveal">
+      <div class="reason-step">
+        <div class="reason-step-num">1</div>
+        <h4>Forma</h4>
+        <p class="reason-step-latin">Essentia</p>
+        <p>A essência da coisa — aquilo que ela é. A forma do tiranossauro, do ser humano, da rocha. Mas por si só, a forma é pura potencialidade.</p>
+        <div class="reason-arrow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1a1a2e" stroke-width="3"><polyline points="9 6 15 12 9 18"/></svg>
+        </div>
+      </div>
+      <div class="reason-step">
+        <div class="reason-step-num">2</div>
+        <h4>Matéria</h4>
+        <p class="reason-step-latin">Materia</p>
+        <p>O substrato material — DNA, proteínas, minerais. Também pura potencialidade. A união de duas potências dá apenas outra potência.</p>
+        <div class="reason-arrow">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#1a1a2e" stroke-width="3"><polyline points="9 6 15 12 9 18"/></svg>
+        </div>
+      </div>
+      <div class="reason-step">
+        <div class="reason-step-num">3</div>
+        <h4>Ato de Ser</h4>
+        <p class="reason-step-latin">Actus essendi</p>
+        <p>Aquilo que confere <strong>atualidade</strong> e realidade ao ente. Não pode ser produzido por forma nem matéria alguma — depende de Deus, o <em>Ipsum Esse</em>.</p>
+      </div>
+    </div>
+
+    <div class="reason-note reveal">
+      <div class="reason-note-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <div class="reason-note-text">
+        <strong>Aristóteles</strong> pensava que forma + matéria = ente real. <strong>Tomás de Aquino</strong>, apoiado em Maimônides e no <em>Yahweh</em> bíblico, percebeu que forma + matéria = ente <em>possível</em>. Somente o ato de ser, dado por Deus, torna a coisa <strong>real</strong>.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== DIAGRAMA 4: Os Transcendentais do Ser ====== -->
+<section class="diagram-section" id="diagrama-transcendentais">
+  <div class="container">
+    <div class="diagram-header reveal">
+      <div class="diagram-number">04</div>
+      <h2 class="diagram-title">Os Transcendentais do Ser</h2>
+      <p class="diagram-subtitle">Propriedades que pertencem a todos os seres — diferentes ângulos de considerar a mesma realidade.</p>
+    </div>
+
+    <div class="cycle-visual reveal">
+      <div class="cycle-diagram">
+        <div class="cycle-orbit"></div>
+        <div class="cycle-path"></div>
+        <div class="cycle-center">
+          <span class="cycle-center-title">Ser</span>
+          <span class="cycle-center-sub">Ens</span>
+        </div>
+        <div class="cycle-node node-top" style="background: rgba(77,101,255,0.1); color: #7b8fff; border: 2px solid rgba(77,101,255,0.25);">
+          <span style="font-size:16px; margin-bottom:2px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/></svg>
+          </span>
+          <span>Uno</span>
+        </div>
+        <div class="cycle-node node-right" style="background: rgba(201,168,76,0.12); color: var(--color-gold); border: 2px solid rgba(201,168,76,0.3);">
+          <span style="font-size:16px; margin-bottom:2px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </span>
+          <span>Verdade</span>
+        </div>
+        <div class="cycle-node node-bottom" style="background: rgba(56,161,105,0.08); color: #68d391; border: 2px solid rgba(56,161,105,0.25);">
+          <span style="font-size:16px; margin-bottom:2px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </span>
+          <span>Bem</span>
+        </div>
+        <div class="cycle-node node-left" style="background: rgba(229,62,62,0.08); color: #fc8181; border: 2px solid rgba(229,62,62,0.2);">
+          <span style="font-size:16px; margin-bottom:2px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </span>
+          <span>Belo</span>
+        </div>
+      </div>
+
+      <div class="cycle-names">
+        <h3 class="cycle-names-title">Os Cinco Transcendentais</h3>
+        <span class="cycle-name-tag">Ens (Ser)</span>
+        <span class="cycle-name-tag">Unum (Uno)</span>
+        <span class="cycle-name-tag">Verum (Verdade)</span>
+        <span class="cycle-name-tag">Bonum (Bem)</span>
+        <span class="cycle-name-tag">Pulchrum (Belo)</span>
+        <div class="cycle-summary">
+          Todo ser, na medida em que <strong>é</strong>, é também uno (indiviso em si), verdadeiro (inteligível, cognoscível), bom (desejável) e belo (máxima comunicação não verbal). Quanto <strong>maior o grau de ser</strong>, maior cada uma dessas propriedades.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== DIAGRAMA 5: Hierarquia do Ser ====== -->
+<section class="diagram-section" id="diagrama-hierarquia">
+  <div class="container">
+    <div class="diagram-header reveal">
+      <div class="diagram-number">05</div>
+      <h2 class="diagram-title">A Hierarquia da Criação</h2>
+      <p class="diagram-subtitle">Deus dá a participar no ser em graus diferentes. Quanto maior o grau de ser, mais há para conhecer, desejar e contemplar.</p>
+    </div>
+
+    <div class="hierarchy-stack reveal">
+      <div class="hierarchy-level" style="--level-width: 35%; border-color: rgba(201,168,76,0.5); background: rgba(201,168,76,0.06);">
+        <h4 style="color: var(--color-gold);">Deus — Ipsum Esse</h4>
+        <p>O ato puro de ser, que possui o ser em plenitude e o dá a todas as criaturas continuamente</p>
+      </div>
+      <svg class="hierarchy-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="hierarchy-level" style="--level-width: 50%; border-color: rgba(128,90,213,0.3); background: rgba(128,90,213,0.04);">
+        <h4 style="color: #b794f4;">Seres Humanos</h4>
+        <p>Infinitamente mais cognoscíveis que animais, plantas e minerais somados — grau máximo de ser entre as criaturas</p>
+      </div>
+      <svg class="hierarchy-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="hierarchy-level" style="--level-width: 65%; border-color: rgba(56,161,105,0.3); background: rgba(56,161,105,0.04);">
+        <h4 style="color: #68d391;">Animais</h4>
+        <p>Muito mais documentários sobre animais que sobre plantas — seres com sensibilidade e movimento</p>
+      </div>
+      <svg class="hierarchy-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="hierarchy-level" style="--level-width: 80%; border-color: rgba(77,101,255,0.3); background: rgba(77,101,255,0.04);">
+        <h4 style="color: #7b8fff;">Plantas</h4>
+        <p>Seres vivos com grau de beleza e complexidade muito superior ao dos minerais — 15 vezes mais a conhecer</p>
+      </div>
+      <svg class="hierarchy-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+      <div class="hierarchy-level" style="--level-width: 95%; border-color: rgba(229,62,62,0.2); background: rgba(229,62,62,0.03);">
+        <h4 style="color: #fc8181;">Materiais Inanimados</h4>
+        <p>Rochas e minerais — grau mínimo de ser, de verdade, de beleza e de cognoscibilidade</p>
+      </div>
+    </div>
+
+    <div class="reason-note reveal">
+      <div class="reason-note-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+      </div>
+      <div class="reason-note-text">
+        A criação não é um evento do passado. Deus <strong>continuamente</strong> dá o ser a todas as coisas. Se Deus se esquecesse de nós por um segundo, não sobraríamos sequer como memória — desapareceríamos <strong>estruturalmente</strong>.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== DIAGRAMA 6: Desvios Modernos ====== -->
+<section class="diagram-section" id="diagrama-desvios">
+  <div class="container">
+    <div class="diagram-header reveal">
+      <div class="diagram-number">06</div>
+      <h2 class="diagram-title">Os Desvios Modernos</h2>
+      <p class="diagram-subtitle">Três correntes filosóficas que confundiram partes do ente com o ser — e as consequências dessas confusões.</p>
+    </div>
+
+    <div class="condition-grid reveal">
+      <div class="condition-card">
+        <div class="condition-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fc8181" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <h3>Materialismo</h3>
+        <p>Confunde <strong>matéria</strong> com ser. Diz que a matéria pré-existente basta para explicar a realidade. Mas a matéria é pura potência — só existe <em>nas coisas</em>, nunca por si mesma.</p>
+        <div class="condition-quote">
+          <p>Ser = Matéria?</p>
+        </div>
+      </div>
+      <div class="condition-card">
+        <div class="condition-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#7b8fff" stroke-width="2"><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><circle cx="12" cy="12" r="10"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <h3>Racionalismo</h3>
+        <p>Confunde <strong>forma</strong> (essência, conceito) com ser. "Se eu entendi, praticamente já está feito." Mas ideias custam muito para se tornarem realidade.</p>
+        <div class="condition-quote">
+          <p>Ser = Essência?</p>
+        </div>
+      </div>
+      <div class="condition-card">
+        <div class="condition-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+        </div>
+        <h3>Existencialismo</h3>
+        <p>Confunde <strong>existência</strong> com ser. "A existência precede a essência" — você se autocria pelas suas ações. Mas sem forma prévia, não se produz nada real.</p>
+        <div class="condition-quote">
+          <p>Ser = Existência?</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top: 40px; overflow-x: auto;">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Aspecto</th>
+            <th>Visão Tomista</th>
+            <th>Desvios Modernos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Fundamento</td>
+            <td>O ser é o <span class="compare-highlight highlight-gold">ato de ser</span> dado por Deus</td>
+            <td>Matéria, conceito ou ação humana <span class="compare-highlight highlight-red">bastam</span></td>
+          </tr>
+          <tr>
+            <td>Essência</td>
+            <td>Precede a existência — <span class="compare-highlight highlight-gold">recebida</span></td>
+            <td>Sartre: a essência é <span class="compare-highlight highlight-blue">criada pela ação</span></td>
+          </tr>
+          <tr>
+            <td>Identidade</td>
+            <td>Dada pela natureza — há algo que se <span class="compare-highlight highlight-gold">é</span></td>
+            <td>"Você pode ser o que quiser" — <span class="compare-highlight highlight-red">autodefinição</span></td>
+          </tr>
+          <tr>
+            <td>Resultado</td>
+            <td><span class="compare-highlight highlight-green">Harmonia</span> com a realidade</td>
+            <td>Crises de identidade, <span class="compare-highlight highlight-red">pandemia psíquica</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="container footer-inner">
@@ -444,5 +815,55 @@
 </div>
 
 <script src="/js/aula-editorial.js"></script>
+
+<!-- Diagram scroll reveal + active nav -->
+<script>
+(function() {
+  // Scroll reveal for diagram sections
+  var diagramReveals = document.querySelectorAll('.diagram-section .reveal, .diagrams-banner.reveal');
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.15 });
+  diagramReveals.forEach(function(el) { revealObserver.observe(el); });
+
+  // Active nav tracking
+  var navItems = document.querySelectorAll('#diagramNav .diagram-nav-item');
+  var sections = [];
+  navItems.forEach(function(item) {
+    var id = item.getAttribute('href').replace('#', '');
+    var sec = document.getElementById(id);
+    if (sec) sections.push({ el: sec, link: item });
+  });
+
+  function updateActiveNav() {
+    var scrollY = window.scrollY + 120;
+    var active = null;
+    sections.forEach(function(s) {
+      if (s.el.offsetTop <= scrollY) active = s;
+    });
+    navItems.forEach(function(n) { n.classList.remove('active'); });
+    if (active) active.link.classList.add('active');
+  }
+
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+
+  // Smooth scroll for diagram nav links
+  navItems.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      var id = this.getAttribute('href').replace('#', '');
+      var target = document.getElementById(id);
+      if (target) {
+        var offset = target.offsetTop - 60;
+        window.scrollTo({ top: offset, behavior: 'smooth' });
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
